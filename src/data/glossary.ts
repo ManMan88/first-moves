@@ -1,0 +1,203 @@
+export interface GlossaryEntry {
+  term: string;
+  slug: string;
+  def: string;
+  /** Lesson id (file name without .mdx) that teaches the term. */
+  lesson?: string;
+}
+
+export const GLOSSARY: GlossaryEntry[] = [
+  {
+    term: 'Aftertouch',
+    slug: 'aftertouch',
+    def: 'Pressure you add after a pad is already down. On Move, pressing harder on a held pad can change some sounds while they play, and each pad is tracked on its own.',
+  },
+  {
+    term: 'Arpeggiator',
+    slug: 'arpeggiator',
+    def: 'A helper that turns the notes you hold into a pattern of single notes played one after another (up, down or in random order), in time with the tempo.',
+  },
+  {
+    term: 'Automation',
+    slug: 'automation',
+    def: 'Knob movements that Move remembers. Turn a knob while recording and the change plays back every time the clip loops.',
+  },
+  {
+    term: 'Bar',
+    slug: 'bar',
+    def: 'A group of beats. Most music counts 4 beats to a bar. With the default settings, one bar fills all 16 step buttons.',
+  },
+  {
+    term: 'Beat',
+    slug: 'beat',
+    def: 'The steady pulse you tap your foot to. On Move each beat is 4 steps long by default, so steps 1, 5, 9 and 13 each start a new beat.',
+  },
+  {
+    term: 'BPM',
+    slug: 'bpm',
+    def: 'Beats per minute: how fast the music goes. At 120 BPM you hear two beats every second. Also called the tempo.',
+  },
+  {
+    term: 'Capture',
+    slug: 'capture',
+    def: 'Move’s safety net. It keeps listening to what you play even when you are not recording, and pressing the Capture button turns that playing into a clip.',
+  },
+  {
+    term: 'Clip',
+    slug: 'clip',
+    def: 'A short piece of music on one track, usually a loop a few bars long. Each track has room for up to 8 clips, and you choose which one plays.',
+  },
+  {
+    term: 'Count-in',
+    slug: 'count-in',
+    def: 'A short countdown of clicks before recording starts, so you have time to get ready and come in on the beat.',
+  },
+  {
+    term: 'Drum Rack',
+    slug: 'drum-rack',
+    def: 'A drum kit: a set of drum sounds with one sound per pad. On a drum track, the left block of 16 pads plays the kit.',
+  },
+  {
+    term: 'Effect',
+    slug: 'effect',
+    def: 'A device that changes a sound after it is made, such as reverb (a sense of space), delay (echoes) or a filter (a darker or brighter tone).',
+  },
+  {
+    term: 'Encoder',
+    slug: 'encoder',
+    def: 'Another word for Move’s knobs. They turn endlessly in either direction, and they sense touch: touching one shows on the display what it changes.',
+    lesson: '01-tour',
+  },
+  {
+    term: 'Groove',
+    slug: 'groove',
+    def: 'A timing shift that makes a rhythm feel looser and less robotic. Move’s groove is a swing: every other short note arrives a little late.',
+  },
+  {
+    term: 'Instrument',
+    slug: 'instrument',
+    def: 'The device that makes the sound on a track: a synthesizer, a drum kit, or a sampler that plays recordings.',
+  },
+  {
+    term: 'Key',
+    slug: 'key',
+    def: 'The home note of a piece of music, such as C or A. Melodies tend to feel settled when they come back to it.',
+  },
+  {
+    term: 'Loop',
+    slug: 'loop',
+    def: 'A stretch of music that repeats. Clips on Move loop again and again until you stop them.',
+  },
+  {
+    term: 'Metronome',
+    slug: 'metronome',
+    def: 'A click that sounds on every beat, to help you keep time while you play or record.',
+  },
+  {
+    term: 'Note Mode',
+    slug: 'note-mode',
+    def: 'The view for building one track at a time: play the pads, place notes with the step buttons, and change the sound.',
+  },
+  {
+    term: 'Octave',
+    slug: 'octave',
+    def: 'The distance from one note to the next note with the same name, higher or lower (C up to the next C). The plus and minus buttons shift the pads by an octave.',
+  },
+  {
+    term: 'Pad',
+    slug: 'pad',
+    def: 'One of Move’s 32 soft, light-up squares. Pads play notes or drum sounds, and they feel how hard you hit them.',
+    lesson: '01-tour',
+  },
+  {
+    term: 'Quantize',
+    slug: 'quantize',
+    def: 'Snapping notes to the nearest step of the grid, to tidy up timing that came out a little early or late.',
+  },
+  {
+    term: 'Recording',
+    slug: 'recording',
+    def: 'Playing notes or turning knobs while Move writes what you do into a clip, in real time.',
+  },
+  {
+    term: 'Resampling',
+    slug: 'resampling',
+    def: 'Recording what Move itself is playing as a new sample, so a whole beat or a processed sound becomes something you can play from a single pad.',
+  },
+  {
+    term: 'Sample',
+    slug: 'sample',
+    def: 'A piece of recorded sound (a drum hit, a voice, a noise from your kitchen) that you can play back from a pad.',
+  },
+  {
+    term: 'Sampling',
+    slug: 'sampling',
+    def: 'Recording sound into Move to use as a sample: from the built-in microphone, the audio input, USB-C, or Move itself.',
+  },
+  {
+    term: 'Scale',
+    slug: 'scale',
+    def: 'A family of notes that sound good together, such as major (bright) or minor (darker). Move can lay out only the notes of your scale on the pads, so every pad fits.',
+  },
+  {
+    term: 'Scene',
+    slug: 'scene',
+    def: 'A column of pads in Session Mode: one clip slot from each track. Playing a scene starts those clips together, like one section of a song.',
+  },
+  {
+    term: 'Sequencing',
+    slug: 'sequencing',
+    def: 'Placing notes on a grid of steps instead of playing them live. Move repeats the pattern for you, so timing is always exact.',
+  },
+  {
+    term: 'Session Mode',
+    slug: 'session-mode',
+    def: 'The view that shows every clip in your Set on the pads, with one row per track, so you can launch clips and try out combinations.',
+  },
+  {
+    term: 'Set',
+    slug: 'set',
+    def: 'One piece of music on Move: its four tracks, their sounds and all their clips. Move saves Sets automatically as you go.',
+  },
+  {
+    term: 'Set Overview',
+    slug: 'set-overview',
+    def: 'The home screen for your Sets. Each pad stands for one Set slot, so you can open, create, copy or delete Sets.',
+  },
+  {
+    term: 'Shift',
+    slug: 'shift',
+    def: 'The button marked with three dots (•••) that unlocks second jobs. Hold it and press another control, such as a step button, to open the setting printed under it.',
+    lesson: '01-tour',
+  },
+  {
+    term: 'Slicing',
+    slug: 'slicing',
+    def: 'Chopping one longer sample into pieces and spreading them across pads, so you can replay the parts in a new order.',
+  },
+  {
+    term: 'Step',
+    slug: 'step',
+    def: 'One slot in the pattern grid, shown by one of the 16 step buttons. With the default settings each step is a 16th note: a quarter of a beat.',
+  },
+  {
+    term: 'Tempo',
+    slug: 'tempo',
+    def: 'The speed of the music, measured in BPM (beats per minute). Every track in a Set follows the same tempo.',
+  },
+  {
+    term: 'Track',
+    slug: 'track',
+    def: 'One lane of your Set with its own sound, such as drums, bass or chords. Every Set has four tracks, chosen with the four track buttons.',
+  },
+  {
+    term: 'Track Preset',
+    slug: 'track-preset',
+    def: 'A ready-made sound for a track: one instrument plus two effects. New Sets start with presets picked at random, and you can swap them in the browser.',
+  },
+  {
+    term: 'Velocity',
+    slug: 'velocity',
+    def: 'How hard a note is played. Hit a pad softly for a low velocity (quieter) or hard for a high velocity (louder, often brighter).',
+  },
+];

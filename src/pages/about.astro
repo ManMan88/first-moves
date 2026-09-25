@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
+---
+
+<Base title="About" description="Who made First Moves, what it is based on, and how it is licensed.">
+  <div class="wrap prose">
+    <h1>About First Moves</h1>
+    <p class="lede">
+      First Moves is a free, hands-on course for people who just got an Ableton Move and are new to making music.
+    </p>
+
+    <h2>Unofficial</h2>
+    <p>
+      This site is <strong>not affiliated with or endorsed by Ableton AG</strong>. Ableton, Move, Live, Push and Note
+      are trademarks of Ableton AG. The lessons are written from scratch and the drawings are our own; nothing here is
+      copied from Ableton’s manual or tutorials.
+    </p>
+
+    <h2>What it’s based on</h2>
+    <ul>
+      <li><a href="https://www.ableton.com/en/move/manual/">The official Move manual</a> (written for Move software 1.x).</li>
+      <li>
+        <a href="https://www.ableton.com/en/release-notes/move-1/">Ableton’s Move release notes</a>, for features added
+        in Move software 2.0 and 2.1.
+      </li>
+      <li><a href="https://help.ableton.com/hc/en-us/categories/15835956341660-Move">Ableton’s Move help articles</a>.</li>
+      <li>
+        <a href="https://www.ableton.com/move/learn-move/">Ableton’s Learn Move videos</a>, which lessons link to where
+        they fit.
+      </li>
+    </ul>
+    <p>
+      The course is written for <strong>Move software 2.1</strong>. When a lesson relies on something newer than the
+      manual, it says so. If a step doesn’t match what your Move does, trust your Move, and check the official manual.
+    </p>
+
+    <h2>Your progress</h2>
+    <p>
+      Progress is stored only in this browser (local storage). There are no accounts, no tracking, and nothing is sent
+      anywhere. You can reset it from the <a href={url('course/')}>course map</a>.
+    </p>
+
+    <h2>License</h2>
+    <p>
+      Lesson text and drawings: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Code: MIT. Source
+      on <a href="https://github.com/ManMan88/first-moves">GitHub</a>.
+    </p>
+  </div>
+</Base>

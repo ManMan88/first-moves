@@ -16,9 +16,11 @@ import DiagramIcon from './DiagramIcon.astro';
 interface Props {
   interactive?: boolean;
   label?: string;
+  /** Control ids drawn highlighted from the start. */
+  lit?: string[];
 }
 
-const { interactive = false, label = 'Drawing of Move, seen from above' } = Astro.props;
+const { interactive = false, label = 'Drawing of Move, seen from above', lit = [] } = Astro.props;
 const HALO = 7;
 const stepNumber = (id: string) => (id.startsWith('step-') ? Number(id.slice(5)) : 0);
 ---
@@ -50,6 +52,7 @@ const stepNumber = (id: string) => (id.startsWith('step-') ? Number(id.slice(5))
           data-cx={cx}
           data-cy={cy}
           data-r={r}
+          data-active={lit.includes(placed.id) ? '' : undefined}
           tabindex={interactive ? 0 : undefined}
           role={interactive ? 'button' : undefined}
           aria-label={interactive ? control.name : undefined}

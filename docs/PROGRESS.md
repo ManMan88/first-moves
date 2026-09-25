@@ -55,13 +55,14 @@ Legend: ✅ done · 🔄 in progress · ⬜ not started
 - ✅ Stage 1 plan committed.
 
 ### Stage 1: site + lessons 1–8 (plan: `docs/superpowers/plans/2026-09-25-first-moves-stage1.md`)
-- ⬜ Task 1: Scaffold, base-path helper, CI
-- ⬜ Task 2: Controls registry and drawing geometry
-- ⬜ Task 3: Move drawing and controls reference page
-- ⬜ Task 4: Progress store
-- ⬜ Task 5: Lesson collection, step components, stepper
-- ⬜ Task 6: Home, course map, glossary, about, 404
-- ⬜ Task 7: End-to-end tests and copying check
+Work happens on branch `stage-1`; it is fast-forwarded to `main` before publishing (Task 9).
+- ✅ Task 1: Scaffold, base-path helper, CI
+- ✅ Task 2: Controls registry and drawing geometry
+- ✅ Task 3: Move drawing and controls reference page
+- ✅ Task 4: Progress store
+- ✅ Task 5: Lesson collection, step components, stepper
+- ✅ Task 6: Home, course map, glossary, about, 404
+- 🔄 Task 7: End-to-end tests and copying check
 - ⬜ Task 8: Lessons 1–8 (content workflow) and hardware checklist
 - ⬜ Task 9: Publish (create public repo, Pages) and verify live
 - ⬜ Task 10: Whole-branch review
@@ -81,3 +82,16 @@ Legend: ✅ done · 🔄 in progress · ⬜ not started
 - 2026-09-25:
   - Research, spec and Stage 1 plan written and committed.
   - Ron approved the curriculum and architecture sections, then delegated the rest.
+  - Tasks 1–6 done on `stage-1`:
+    - scaffold and CI;
+    - controls registry and SVG drawing;
+    - controls page;
+    - progress store;
+    - lesson system with step player;
+    - home, course, glossary, about and 404 pages.
+  - Lesson 1 is still a pipeline-proof draft; real content comes in Task 8.
+  - Decisions logged during the work:
+    - `@types/node` added (dev) for type-checking tests;
+    - the "Lesson complete" panel reads the next-lesson link from `data-next-href` on the lesson `<article>`;
+    - back-panel ports are drawn further apart than on the real device so their labels don't overlap;
+    - the manual doesn't say which track button is Track 1: `track-1` is assumed to be the top one and goes on the hardware checklist.

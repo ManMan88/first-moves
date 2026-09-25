@@ -1,0 +1,34 @@
+---
+import { GLOSSARY } from '../data/glossary';
+import Base from '../layouts/Base.astro';
+import { getLessons } from '../lib/lessons';
+import { url } from '../lib/url';
+
+const lessons = await getLessons();
+const titleOf = (id: string) => lessons.find((l) => l.id === id)?.data.title;
+---
+
+<Base title="Glossary" description="Plain-language meanings of the music and Move words used in First Moves.">
+  <div class="wrap">
+    <h1>Glossary</h1>
+    <p class="lede">Music and Move words, in plain language.</p>
+    <nav class="glossary-index" aria-label="Glossary terms">
+      {GLOSSARY.map((g) => <a href={`#${g.slug}`}>{g.term}</a>)}
+    </nav>
+    <dl class="glossary">
+      {GLOSSARY.map((g) => (
+        <div class="glossary-entry" id={g.slug}>
+          <dt>{g.term}</dt>
+          <dd>
+            {g.def}
+            {g.lesson && titleOf(g.lesson) && (
+              <span class="glossary-lesson">
+                {' '}Learn it in <a href={url(`lessons/${g.lesson}/`)}>{titleOf(g.lesson)}</a>.
+              </span>
+            )}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</Base>

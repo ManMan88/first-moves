@@ -1,10 +1,91 @@
 ---
+import MoveDiagram from '../components/MoveDiagram.astro';
+import { PARTS } from '../data/parts';
 import Base from '../layouts/Base.astro';
+import { getLessons } from '../lib/lessons';
+import { url } from '../lib/url';
+
+const lessons = await getLessons();
+const first = lessons[0];
+const lessonRefs = lessons.map((l) => ({ id: l.id, href: url(`lessons/${l.id}/`), title: l.data.title }));
+const countByPart = (n: number) => lessons.filter((l) => l.data.part === n).length;
 ---
 
 <Base title="First Moves">
   <div class="wrap">
-    <h1>First Moves</h1>
-    <p>A hands-on beginner course for the Ableton Move.</p>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="kicker">A free, unofficial beginner course</p>
+        <h1>Learn your Ableton Move, one step at a time</h1>
+        <p class="lede">
+          Hold your Move, follow the buttons that light up on the screen, and tap <strong>I did it</strong>. No music
+          experience needed: every lesson explains the idea behind what you press.
+        </p>
+        <div class="hero-actions">
+          <a
+            class="button"
+            data-continue
+            data-lessons={JSON.stringify(lessonRefs)}
+            data-course-href={url('course/')}
+            href={url(`lessons/${first.id}/`)}>Start lesson 1 →</a
+          >
+          <a class="button secondary" href={url('course/')}>See all lessons</a>
+        </div>
+      </div>
+      <div class="hero-figure">
+        <MoveDiagram lit={['shift', 'step-2']} label="Drawing of Move with the Shift button and Step 2 lit up" />
+        <p class="figure-caption muted">In every step, the controls to press light up on the drawing.</p>
+      </div>
+    </section>
+
+    <section class="how">
+      <h2>How it works</h2>
+      <ol class="how-list">
+        <li class="card">
+          <strong>Hold your Move</strong>
+          <span>Keep it next to your phone or laptop. It doesn’t need to be connected to anything.</span>
+        </li>
+        <li class="card">
+          <strong>Follow the lights</strong>
+          <span>Each step shows exactly which buttons to press, in which order, and what should happen.</span>
+        </li>
+        <li class="card">
+          <strong>Tap “I did it”</strong>
+          <span>Move on at your own pace. Your progress is saved in this browser.</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="parts">
+      <h2>What you’ll learn</h2>
+      <div class="part-grid">
+        {PARTS.map((part) => (
+          <a class="part-card card" href={url(`course/#part-${part.n}`)}>
+            <span class="part-num">Part {part.n}</span>
+            <strong>{part.title}</strong>
+            <span class="muted">{part.blurb}</span>
+            <span class="part-count">
+              {countByPart(part.n) > 0 ? `${countByPart(part.n)} lesson${countByPart(part.n) === 1 ? '' : 's'}` : 'Coming soon'}
+            </span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="need">
+      <h2>What you need</h2>
+      <ul>
+        <li>An Ableton Move, charged or plugged in.</li>
+        <li>Headphones if you like (Move also has a built-in speaker).</li>
+        <li>About 10–15 minutes per lesson.</li>
+      </ul>
+      <p class="muted">
+        Written for Move software 2.1. Where a feature is newer than Ableton’s manual, the lesson says so.
+      </p>
+    </section>
   </div>
 </Base>
+
+<script>
+  import '../scripts/lesson-status.ts';
+</script>

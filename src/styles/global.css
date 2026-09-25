@@ -973,3 +973,259 @@ main {
     top: 1rem;
   }
 }
+
+/* Home */
+.hero {
+  display: grid;
+  gap: 1.5rem 2.5rem;
+  align-items: center;
+  padding: 0.5rem 0 1rem;
+}
+
+.hero h1 {
+  margin-top: 0.2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+}
+
+.how-list {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: how;
+}
+
+.how-list li {
+  display: grid;
+  align-content: start;
+  gap: 0.2rem;
+  counter-increment: how;
+}
+
+.how-list li::before {
+  content: counter(how);
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.3rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 800;
+}
+
+.how-list span {
+  color: var(--muted);
+}
+
+.part-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.part-card {
+  display: grid;
+  gap: 0.2rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.part-card:hover {
+  border-color: var(--accent);
+}
+
+.part-num {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.part-count {
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+
+.need ul {
+  padding-left: 1.2rem;
+}
+
+@media (min-width: 720px) {
+  .how-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .part-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  }
+
+  .part-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Course map */
+.course-part {
+  margin-bottom: 1.5rem;
+}
+
+.course-part h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.6rem;
+  margin-bottom: 0.2rem;
+}
+
+.lesson-list {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lesson-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+
+.lesson-card:hover {
+  border-color: var(--accent);
+}
+
+.lesson-num {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--surface-2);
+  font-weight: 800;
+}
+
+.lesson-card-text {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.lesson-card-text .muted {
+  font-size: 0.93rem;
+}
+
+.lesson-state {
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+}
+
+.lesson-card[data-started] .lesson-state {
+  border-color: var(--hold);
+  background: linear-gradient(90deg, var(--hold-soft) 50%, transparent 50%);
+}
+
+.lesson-card[data-done] .lesson-state {
+  border-color: var(--ok);
+  background: var(--ok);
+  position: relative;
+}
+
+.lesson-card[data-done] .lesson-state::after {
+  content: "✓";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 900;
+  font-size: 0.9rem;
+}
+
+.lesson-card[data-done] .lesson-num {
+  background: var(--ok-soft);
+  color: var(--ok);
+}
+
+.lesson-card:not([data-done]) .done-label {
+  display: none;
+}
+
+.coming-soon {
+  padding: 0.7rem 1rem;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  color: var(--muted);
+}
+
+.reset-row {
+  margin-top: 2rem;
+}
+
+/* Glossary */
+.glossary-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.9rem;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.glossary {
+  margin: 0;
+  max-width: 46rem;
+}
+
+.glossary-entry {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 1rem;
+}
+
+.glossary-entry:target {
+  background: var(--accent-soft);
+  border-radius: 8px;
+  padding-inline: 0.6rem;
+}
+
+.glossary dt {
+  font-weight: 750;
+  font-size: 1.1rem;
+}
+
+.glossary dd {
+  margin: 0.2rem 0 0;
+}
+
+.glossary-lesson {
+  color: var(--muted);
+}
+
+.prose {
+  max-width: 46rem;
+}

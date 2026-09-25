@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
+---
+
+<Base title="Page not found">
+  <div class="wrap prose">
+    <h1>That page isn’t here</h1>
+    <p class="lede">The link may be old, or the lesson may not be written yet.</p>
+    <p>
+      <a class="button" href={url()}>Go to the start</a>
+      <a class="button secondary" href={url('course/')}>See the course map</a>
+    </p>
+  </div>
+</Base>
