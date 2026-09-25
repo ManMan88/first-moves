@@ -65,13 +65,17 @@ Work happens on branch `stage-1`; it is fast-forwarded to `main` before publishi
 - ✅ Task 7: End-to-end tests and copying check
 - ✅ Task 8: Lessons 1–8 written (4 writers → 4 fact-checkers) and edited; hardware checklist at `docs/hardware-checklist.md`.
 - ✅ Task 9: Published. `ManMan88/first-moves` is public; Pages is deployed by GitHub Actions on every push to `main`; the live pages and the step player are verified.
-- 🔄 Task 10: Whole-branch review (workflow `review-stage-1`, one read-only reviewer, range a7c860e..c92f34a).
+- ✅ Task 10: Whole-branch review. Verdict: "With fixes", with 0 critical and 6 important findings. All important findings, plus 4 minors graded up, are fixed with tests (commit `0af6b4f`).
 
-### Stage 2: lessons 9–17 🔄
-- Plan: `docs/superpowers/plans/2026-09-25-first-moves-stages-2-3.md`.
-- Workflow: `docs/superpowers/workflows/write-lessons-9-17.js`, with groups (9, 10), (11, 12), (13, 14), (15, 16, 17), a writer and then a fact-checker each, at medium effort.
-- If it was interrupted: check which lesson files 09–17 exist and are complete, then re-run the script (a resume with the run id replays finished agents).
-### Stage 3: lessons 18–26, glossary links, final review ⬜
+### Stage 2: lessons 9–17 ✅
+- Written (4 writers → 4 fact-checkers), then reviewed and committed (`7858b0a`); live.
+- Workflow script: `docs/superpowers/workflows/write-lessons-9-17.js`.
+### Stage 3: lessons 18–26, glossary links, final review 🔄
+- Workflow: `docs/superpowers/workflows/write-lessons-18-26.js`, with groups (18, 19, 20), (21, 22, 23), (24), (25, 26), a writer and then a fact-checker each, at medium effort.
+- After it finishes:
+  - merge the hardware checks into the checklist;
+  - add glossary links;
+  - run a final course-continuity review of all 26 lessons.
 
 ## How to resume
 
@@ -106,3 +110,31 @@ Work happens on branch `stage-1`; it is fast-forwarded to `main` before publishi
     - Added tests: exactly one `<Steps>` per lesson, and a `press` on every `<Step>`.
     - Fixed a phone bug found in review: the next step scrolled under the sticky drawing.
     - The writers' handoff notes were merged into the checklist and removed.
+  - Stage 1 review fixes (`0af6b4f`):
+    - progress no longer lost across tabs;
+    - Continue goes to where you left off;
+    - the sticky drawing no longer covers steps on landscape phones or without JS;
+    - order badges are readable (sized in screen pixels, one per action);
+    - AA contrast in light mode;
+    - the copying check covers visible frontmatter and manual page breaks;
+    - the unsourced "double-press Shift to lock" claim was removed.
+  - **Deferred minors** (not fixed yet):
+    - the step player announces twice for screen readers (`aria-live` plus focus);
+    - the controls page has about 70 tab stops (needs a roving tabindex) and gives no screen-reader feedback when a control is chosen;
+    - lesson MDX hardcodes `/first-moves/` (guarded by the e2e crawler).
+  - Stage 2: fact-checkers corrected the research doc (Max Length arrived in 2.0.0, not 2.1). Standalone Shift + Step 14 (new clip) comes from release notes 1.4; the manual only shows it for Control Live. It's on the checklist.
+
+## Decisions made on Ron's behalf (from the Stage 1 execution log)
+
+| Decision | Why | Cost if wrong |
+|---|---|---|
+| Work on branch `stage-1`, fast-forwarded to `main` | New repo, no parallel work | None |
+| Pin actions/checkout and setup-node to v7 | Latest releases | None |
+| Draw the back-edge ports further apart than on the real device | So the labels don't overlap | Cosmetic |
+| Add `@types/node` as a dev dependency | Type-checking the tests | One dev dependency |
+| The "Lesson complete" panel reads the next-lesson link from `data-next-*` on the lesson article | Simpler than a component wrapper | None |
+| e2e tests serve `dist/` with `scripts/serve-dist.mjs` instead of `astro preview` | Astro 7's preview puts itself in the background without a TTY | None |
+| e2e tests also run in CI | Base-path bugs only show on Pages | About 1 min of CI time |
+| Spec rule 4 relaxed per Manual 6.1.1 (preset families fixed per track) | Primary source | A step might point at the wrong track in a demo Set (each such step has a caveat) |
+| Lessons 2, 5 and 8 keep 12–16 steps in a single `<Steps>` block | Progress is saved per lesson | Longer lessons |
+| CI token scope not changed | The deploy job never runs on pull requests | Low |
