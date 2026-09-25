@@ -63,9 +63,9 @@ export const TOP_LAYOUT: Placed[] = [
 ];
 
 export const BACK_LAYOUT: Placed[] = [
-  { id: 'power', shape: circle(52, 70, 15) },
-  { id: 'audio-out', shape: circle(110, 70, 10) },
-  { id: 'audio-in', shape: circle(158, 70, 10) },
+  { id: 'power', shape: circle(50, 70, 15) },
+  { id: 'audio-out', shape: circle(135, 70, 10) },
+  { id: 'audio-in', shape: circle(205, 70, 10) },
   { id: 'usb-a', shape: rect(958, 62, 38, 16, 2) },
   { id: 'usb-c', shape: rect(1058, 63, 34, 14, 7) },
 ];

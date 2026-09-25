@@ -1,0 +1,124 @@
+---
+import BackPanel from '../components/BackPanel.astro';
+import MoveDiagram from '../components/MoveDiagram.astro';
+import { CONTROL_MAP, CONTROLS, type Control } from '../data/controls';
+import Base from '../layouts/Base.astro';
+
+const get = (id: string): Control => CONTROL_MAP.get(id)!;
+const stepShortcuts = CONTROLS.filter((c) => c.group === 'step' && c.shift);
+
+interface Entry {
+  id: string;
+  name: string;
+  does: string;
+  shift?: string;
+}
+
+const one = (id: string): Entry => {
+  const c = get(id);
+  return { id: c.id, name: c.name, does: c.does, shift: c.shift };
+};
+
+const sections: { title: string; entries: Entry[] }[] = [
+  {
+    title: 'Screen and getting around',
+    entries: ['display', 'wheel', 'back', 'note-session', 'left', 'right', 'plus', 'minus'].map(one),
+  },
+  {
+    title: 'Playing, recording and sampling',
+    entries: ['play', 'record', 'capture', 'sampling', 'loop'].map(one),
+  },
+  {
+    title: 'Editing',
+    entries: ['shift', 'undo', 'copy', 'delete', 'mute'].map(one),
+  },
+  {
+    title: 'Tracks, pads and knobs',
+    entries: [
+      {
+        id: 'tracks',
+        name: 'Track buttons (4)',
+        does: 'The four tall buttons left of the pads. Each one selects a track. Hold one to peek at that track without switching to it.',
+        shift: get('track-1').shift,
+      },
+      {
+        id: 'pads',
+        name: 'Pads (32)',
+        does: get('pad-1-1').does,
+      },
+      {
+        id: 'encoders',
+        name: 'Knobs (8)',
+        does: 'The eight knobs along the top change the sound: each one controls one setting of the current instrument or effect. Touch a knob to see its name on the display.',
+        shift: get('encoder-1').shift,
+      },
+      one('volume'),
+    ],
+  },
+  {
+    title: 'Sound in and out, and power',
+    entries: ['mic', 'power', 'audio-out', 'audio-in', 'usb-a', 'usb-c'].map(one),
+  },
+];
+---
+
+<Base title="Every control" description="Tap any button, knob or pad on the drawing of Move to see what it does, including its Shift function.">
+  <div class="wrap">
+    <h1>Every control on Move</h1>
+    <p class="lede">
+      Tap any button, knob or pad on the drawing to jump to what it does. Many controls have a second job while you
+      hold <strong>Shift</strong>.
+    </p>
+    <div class="controls-layout">
+      <div class="controls-figure">
+        <MoveDiagram interactive label="Drawing of Move. Tap a control to see what it does." />
+        <BackPanel interactive />
+        <p class="figure-caption muted">Top: the face of Move. Bottom: its back edge, with the connections.</p>
+      </div>
+      <div class="controls-list">
+        {sections.map((section) => (
+          <section>
+            <h2>{section.title}</h2>
+            {section.entries.map((entry) => (
+              <article class="control-entry card" id={`control-${entry.id}`} data-control-entry={entry.id}>
+                <h3>{entry.name}</h3>
+                <p class="picked muted" data-picked hidden></p>
+                <p>{entry.does}</p>
+                {entry.shift && (
+                  <p class="shift-line"><span class="shift-chip">Shift</span> {entry.shift}</p>
+                )}
+              </article>
+            ))}
+          </section>
+        ))}
+        <section>
+          <h2>Step buttons</h2>
+          <article class="control-entry card" id="control-steps" data-control-entry="steps">
+            <h3>Step buttons (16)</h3>
+            <p class="picked muted" data-picked hidden></p>
+            <p>
+              The row of 16 round buttons below the pads. Each one is a step of your pattern: by default, one 16th
+              note. Steps 1, 5, 9 and 13 have a small line under their light: each one starts a beat. In Loop Mode,
+              the steps stand for the bars of your clip instead.
+            </p>
+            <p>Hold <strong>Shift</strong> and press a step to open the setting printed under it:</p>
+            <table class="shortcut-table">
+              <thead>
+                <tr><th scope="col">Hold Shift +</th><th scope="col">What it does</th></tr>
+              </thead>
+              <tbody>
+                {stepShortcuts.map((c) => (
+                  <tr><td>{c.name}</td><td>{c.shift}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </article>
+        </section>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<script>
+  import '../scripts/controls-page.ts';
+</script>

@@ -1,0 +1,67 @@
+---
+import { CONTROL_MAP } from '../data/controls';
+import { BACK_LAYOUT, BACK_VIEW, centerOf, encoderX } from '../data/layout';
+
+interface Props {
+  interactive?: boolean;
+  label?: string;
+}
+
+const { interactive = false, label = 'Drawing of the back edge of Move with its connections' } = Astro.props;
+const HALO = 7;
+const LABELS: Record<string, string> = {
+  power: 'Power',
+  'audio-out': 'Out',
+  'audio-in': 'In',
+  'usb-a': 'USB-A',
+  'usb-c': 'USB-C',
+};
+---
+
+<svg
+  class:list={['move-diagram', 'back-panel', { 'is-interactive': interactive }]}
+  viewBox={`0 0 ${BACK_VIEW.width} ${BACK_VIEW.height}`}
+  role={interactive ? 'group' : 'img'}
+  aria-label={label}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  {Array.from({ length: 8 }, (_, i) => (
+    <rect class="bump" x={encoderX(i + 1) - 22} y="30" width="44" height="18" rx="5"></rect>
+  ))}
+  <rect class="bump" x="1072" y="24" width="64" height="24" rx="6"></rect>
+  <rect class="panel" x="1.5" y="44" width={BACK_VIEW.width - 3} height="52" rx="10"></rect>
+  <g class="controls">
+    {BACK_LAYOUT.map((placed) => {
+      const control = CONTROL_MAP.get(placed.id)!;
+      const { cx, cy, r } = centerOf(placed.shape);
+      const s = placed.shape;
+      return (
+        <g
+          class={`ctl ctl-${control.group}`}
+          data-control={placed.id}
+          data-cx={cx}
+          data-cy={cy}
+          data-r={r}
+          tabindex={interactive ? 0 : undefined}
+          role={interactive ? 'button' : undefined}
+          aria-label={interactive ? control.name : undefined}
+        >
+          <title>{control.name}</title>
+          {s.kind === 'circle' ? (
+            <>
+              <circle class="halo" cx={s.cx} cy={s.cy} r={s.r + HALO}></circle>
+              <circle class="shape" cx={s.cx} cy={s.cy} r={s.r}></circle>
+            </>
+          ) : (
+            <>
+              <rect class="halo" x={s.x - HALO} y={s.y - HALO} width={s.w + HALO * 2} height={s.h + HALO * 2} rx={s.rx + HALO}></rect>
+              <rect class="shape" x={s.x} y={s.y} width={s.w} height={s.h} rx={s.rx}></rect>
+            </>
+          )}
+          <text class="port-label" x={cx} y="118">{LABELS[placed.id]}</text>
+        </g>
+      );
+    })}
+  </g>
+  <g class="badges" aria-hidden="true"></g>
+</svg>

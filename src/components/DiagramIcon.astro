@@ -1,0 +1,64 @@
+---
+import type { Icon } from '../data/layout';
+
+interface Props {
+  name: Icon;
+  cx: number;
+  cy: number;
+  r: number;
+}
+
+const { name, cx, cy, r } = Astro.props;
+const p = (dx: number, dy: number) => `${(cx + dx * r).toFixed(1)},${(cy + dy * r).toFixed(1)}`;
+const x = (d: number) => (cx + d * r).toFixed(1);
+const y = (d: number) => (cy + d * r).toFixed(1);
+---
+
+{name === 'play' && <polygon class="glyph" points={`${p(-0.28, -0.38)} ${p(-0.28, 0.38)} ${p(0.4, 0)}`} />}
+{name === 'record' && <circle class="glyph" cx={cx} cy={cy} r={(r * 0.42).toFixed(1)} />}
+{name === 'back' && <polyline class="glyph" points={`${p(0.12, -0.34)} ${p(-0.2, 0)} ${p(0.12, 0.34)}`} />}
+{name === 'left' && <polyline class="glyph" points={`${p(0.12, -0.34)} ${p(-0.2, 0)} ${p(0.12, 0.34)}`} />}
+{name === 'right' && <polyline class="glyph" points={`${p(-0.12, -0.34)} ${p(0.2, 0)} ${p(-0.12, 0.34)}`} />}
+{name === 'menu' && (
+  <path class="glyph" d={`M${p(-0.36, -0.3)} H${x(0.36)} M${p(-0.36, 0)} H${x(0.36)} M${p(-0.36, 0.3)} H${x(0.36)}`} />
+)}
+{name === 'capture' && (
+  <path
+    class="glyph"
+    d={`M${p(-0.38, -0.14)} V${y(-0.38)} H${x(-0.14)} M${p(0.14, -0.38)} H${x(0.38)} V${y(-0.14)} M${p(0.38, 0.14)} V${y(0.38)} H${x(0.14)} M${p(-0.14, 0.38)} H${x(-0.38)} V${y(0.14)}`}
+  />
+)}
+{name === 'dot' && <circle class="glyph fill" cx={cx} cy={cy} r={(r * 0.2).toFixed(1)} />}
+{name === 'loop' && (
+  <path
+    class="glyph"
+    d={`M${p(0.1, 0.34)} H${x(-0.14)} A${(r * 0.34).toFixed(1)} ${(r * 0.34).toFixed(1)} 0 0 1 ${p(-0.14, -0.34)} H${x(0.14)} A${(r * 0.34).toFixed(1)} ${(r * 0.34).toFixed(1)} 0 0 1 ${p(0.3, 0.2)} M${p(-0.02, 0.2)} L${p(0.12, 0.34)} L${p(-0.02, 0.48)}`}
+  />
+)}
+{name === 'mute' && (
+  <text class="glyph-text" x={cx} y={cy} font-size={(r * 0.9).toFixed(1)}>M</text>
+)}
+{name === 'delete' && (
+  <path class="glyph" d={`M${p(-0.3, -0.3)} L${p(0.3, 0.3)} M${p(0.3, -0.3)} L${p(-0.3, 0.3)}`} />
+)}
+{name === 'copy' && (
+  <>
+    <rect class="glyph" x={x(-0.36)} y={y(-0.08)} width={(r * 0.46).toFixed(1)} height={(r * 0.46).toFixed(1)} rx="2" />
+    <path class="glyph" d={`M${p(-0.14, -0.2)} V${y(-0.36)} H${x(0.36)} V${y(0.14)} H${x(0.2)}`} />
+  </>
+)}
+{name === 'undo' && (
+  <path
+    class="glyph"
+    d={`M${p(0.32, 0.36)} V${y(0.06)} A${(r * 0.26).toFixed(1)} ${(r * 0.26).toFixed(1)} 0 0 0 ${p(0.06, -0.2)} H${x(-0.34)} M${p(-0.18, -0.38)} L${p(-0.36, -0.2)} L${p(-0.18, -0.02)}`}
+  />
+)}
+{name === 'shift' && (
+  <>
+    <circle class="glyph fill" cx={x(-0.3)} cy={cy} r={(r * 0.09).toFixed(1)} />
+    <circle class="glyph fill" cx={cx} cy={cy} r={(r * 0.09).toFixed(1)} />
+    <circle class="glyph fill" cx={x(0.3)} cy={cy} r={(r * 0.09).toFixed(1)} />
+  </>
+)}
+{name === 'plus' && <path class="glyph" d={`M${p(-0.36, 0)} H${x(0.36)} M${p(0, -0.36)} V${y(0.36)}`} />}
+{name === 'minus' && <path class="glyph" d={`M${p(-0.36, 0)} H${x(0.36)}`} />}

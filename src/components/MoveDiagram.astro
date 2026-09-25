@@ -1,0 +1,80 @@
+---
+import { CONTROL_MAP } from '../data/controls';
+import {
+  BEAT_STEPS,
+  ENCODER_Y,
+  STEP_ICON_STEPS,
+  STEP_Y,
+  TOP_LAYOUT,
+  TOP_VIEW,
+  centerOf,
+  encoderX,
+  stepX,
+} from '../data/layout';
+import DiagramIcon from './DiagramIcon.astro';
+
+interface Props {
+  interactive?: boolean;
+  label?: string;
+}
+
+const { interactive = false, label = 'Drawing of Move, seen from above' } = Astro.props;
+const HALO = 7;
+const stepNumber = (id: string) => (id.startsWith('step-') ? Number(id.slice(5)) : 0);
+---
+
+<svg
+  class:list={['move-diagram', { 'is-interactive': interactive }]}
+  viewBox={`0 0 ${TOP_VIEW.width} ${TOP_VIEW.height}`}
+  role={interactive ? 'group' : 'img'}
+  aria-label={label}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect class="panel" x="1.5" y="1.5" width={TOP_VIEW.width - 3} height={TOP_VIEW.height - 3} rx="22"></rect>
+  {Array.from({ length: 8 }, (_, i) => (
+    <circle class="led" cx={encoderX(i + 1)} cy={ENCODER_Y + 42} r="3"></circle>
+  ))}
+  {STEP_ICON_STEPS.map((n) => (
+    <rect class="step-mark" x={stepX(n) - 5} y={STEP_Y + 33} width="10" height="10" rx="2.5"></rect>
+  ))}
+  <g class="controls">
+    {TOP_LAYOUT.map((placed) => {
+      const control = CONTROL_MAP.get(placed.id)!;
+      const { cx, cy, r } = centerOf(placed.shape);
+      const s = placed.shape;
+      const n = stepNumber(placed.id);
+      return (
+        <g
+          class={`ctl ctl-${control.group}`}
+          data-control={placed.id}
+          data-cx={cx}
+          data-cy={cy}
+          data-r={r}
+          tabindex={interactive ? 0 : undefined}
+          role={interactive ? 'button' : undefined}
+          aria-label={interactive ? control.name : undefined}
+        >
+          <title>{control.name}</title>
+          {s.kind === 'circle' ? (
+            <>
+              <circle class="halo" cx={s.cx} cy={s.cy} r={s.r + HALO}></circle>
+              <circle class="shape" cx={s.cx} cy={s.cy} r={s.r}></circle>
+            </>
+          ) : (
+            <>
+              <rect class="halo" x={s.x - HALO} y={s.y - HALO} width={s.w + HALO * 2} height={s.h + HALO * 2} rx={s.rx + HALO}></rect>
+              <rect class="shape" x={s.x} y={s.y} width={s.w} height={s.h} rx={s.rx}></rect>
+            </>
+          )}
+          {placed.icon && <DiagramIcon name={placed.icon} cx={cx} cy={cy} r={r} />}
+          {placed.id.startsWith('track-') && <path class="glyph" d={`M${cx},${cy - 18} V${cy + 18}`}></path>}
+          {placed.id === 'display' && <path class="screen-line" d={`M${cx - 44},${cy + 20} H${cx + 44}`}></path>}
+          {placed.id === 'wheel' && <circle class="glyph thin" cx={cx} cy={cy} r={r - 10}></circle>}
+          {n > 0 && <circle class="glyph fill" cx={cx} cy={cy - 2} r="3.2"></circle>}
+          {BEAT_STEPS.includes(n) && <path class="glyph" d={`M${cx - 6},${cy + 7} H${cx + 6}`}></path>}
+        </g>
+      );
+    })}
+  </g>
+  <g class="badges" aria-hidden="true"></g>
+</svg>

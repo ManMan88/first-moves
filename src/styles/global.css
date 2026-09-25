@@ -262,3 +262,290 @@ main {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Move drawing */
+.move-diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--text);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.move-diagram .panel {
+  fill: var(--panel);
+  stroke: var(--panel-line);
+  stroke-width: 2;
+}
+
+.move-diagram .bump {
+  fill: var(--surface-2);
+  stroke: var(--panel-line);
+  stroke-width: 2;
+}
+
+.move-diagram .led {
+  fill: var(--panel-line);
+  opacity: 0.6;
+}
+
+.move-diagram .step-mark {
+  fill: none;
+  stroke: var(--panel-line);
+  stroke-width: 1.6;
+}
+
+.ctl .shape {
+  fill: var(--surface);
+  stroke: var(--panel-line);
+  stroke-width: 2;
+  transition: fill 0.15s ease, stroke 0.15s ease;
+}
+
+.ctl-pad .shape {
+  fill: var(--pad);
+}
+
+.ctl-screen .shape {
+  fill: var(--screen);
+  stroke: var(--panel-line);
+}
+
+.move-diagram .screen-line {
+  stroke: var(--screen-ink);
+  stroke-width: 2;
+  opacity: 0.35;
+}
+
+.ctl[data-control="shift"] .shape {
+  fill: var(--shift);
+}
+
+.ctl[data-control="power"] .shape {
+  fill: #f2b233;
+}
+
+.ctl[data-control="mic"] .shape {
+  fill: var(--panel-line);
+}
+
+.ctl .glyph {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.ctl .glyph.thin {
+  stroke-width: 1.4;
+  opacity: 0.5;
+}
+
+.ctl .glyph.fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.ctl .glyph-text {
+  fill: currentColor;
+  font: 700 22px var(--font);
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+}
+
+.ctl .port-label {
+  fill: var(--muted);
+  font: 600 24px var(--font);
+  text-anchor: middle;
+}
+
+.ctl .halo {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 5;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ctl[data-active] .shape {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 4;
+}
+
+.ctl[data-active] .halo {
+  opacity: 1;
+  animation: halo-pulse 1.4s ease-in-out infinite;
+}
+
+.ctl[data-held] .shape {
+  fill: var(--hold-soft);
+  stroke: var(--hold);
+}
+
+.ctl[data-held] .halo {
+  stroke: var(--hold);
+}
+
+@keyframes halo-pulse {
+  0%, 100% { opacity: 1; stroke-width: 5; }
+  50% { opacity: 0.25; stroke-width: 11; }
+}
+
+.move-diagram.is-interactive .ctl {
+  cursor: pointer;
+}
+
+.move-diagram.is-interactive .ctl:hover .shape {
+  stroke: var(--accent);
+}
+
+.move-diagram .ctl:focus {
+  outline: none;
+}
+
+.move-diagram .ctl:focus-visible .halo {
+  opacity: 1;
+  stroke: var(--hold);
+}
+
+.badge circle {
+  fill: var(--accent);
+  stroke: var(--surface);
+  stroke-width: 3;
+}
+
+.badge text {
+  fill: var(--accent-ink);
+  font: 800 17px var(--font);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.diagram-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.diagram-legend li::before {
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 0.35em;
+  border-radius: 50%;
+  vertical-align: -0.05em;
+  border: 2px solid var(--accent);
+  background: var(--accent-soft);
+}
+
+.diagram-legend li.hold::before {
+  border-color: var(--hold);
+  background: var(--hold-soft);
+}
+
+/* Controls reference page */
+.lede {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 44rem;
+}
+
+.controls-layout {
+  display: grid;
+  gap: 1rem 2rem;
+}
+
+.controls-figure {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--bg);
+  padding: 0.5rem 0;
+}
+
+.controls-figure .back-panel {
+  margin-top: 0.4rem;
+}
+
+.figure-caption {
+  font-size: 0.85rem;
+  margin: 0.3rem 0 0;
+}
+
+.controls-list h2:first-child {
+  margin-top: 0.5rem;
+}
+
+.control-entry {
+  margin: 0 0 0.8rem;
+  scroll-margin: 45vw 0 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.control-entry h3 {
+  margin: 0 0 0.3rem;
+}
+
+.control-entry p {
+  margin: 0.3rem 0;
+}
+
+.control-entry.is-current {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow);
+}
+
+.shift-chip {
+  display: inline-block;
+  padding: 0 0.5em;
+  border-radius: 999px;
+  background: var(--shift);
+  color: #1a0b07;
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+.shortcut-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.shortcut-table th,
+.shortcut-table td {
+  text-align: left;
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.shortcut-table td:first-child {
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+@media (min-width: 900px) {
+  .controls-layout {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .controls-figure {
+    top: 1rem;
+  }
+
+  .control-entry {
+    scroll-margin: 1rem;
+  }
+}
