@@ -1,0 +1,61 @@
+---
+import '../styles/global.css';
+import { url } from '../lib/url';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'A free, hands-on beginner course for the Ableton Move. Hold your Move, follow the lit-up buttons, one step at a time.' } = Astro.props;
+const path = Astro.url.pathname;
+const nav = [
+  { href: url('course/'), label: 'Course' },
+  { href: url('controls/'), label: 'Controls' },
+  { href: url('glossary/'), label: 'Glossary' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title === 'First Moves' ? title : `${title} · First Moves`}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href={url('favicon.svg')} type="image/svg+xml" />
+    <link rel="canonical" href={new URL(path, Astro.site)} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href={url()}>
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="2" y="2" width="13" height="13" rx="3" fill="var(--accent)"></rect>
+            <rect x="17" y="2" width="13" height="13" rx="3" fill="var(--panel-line)" opacity="0.45"></rect>
+            <rect x="2" y="17" width="13" height="13" rx="3" fill="var(--panel-line)" opacity="0.45"></rect>
+            <rect x="17" y="17" width="13" height="13" rx="3" fill="var(--hold)"></rect>
+          </svg>
+          First Moves
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          {nav.map((item) => (
+            <a href={item.href} aria-current={path.startsWith(item.href) ? 'page' : undefined}>{item.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p><strong>Unofficial.</strong> Not affiliated with or endorsed by Ableton AG. Ableton and Move are trademarks of Ableton AG.</p>
+        <p>
+          For every detail, see the <a href="https://www.ableton.com/en/move/manual/">official Move manual</a>.
+          · <a href={url('about/')}>About this course</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
