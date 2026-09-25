@@ -11,6 +11,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Aftertouch',
     slug: 'aftertouch',
     def: 'Pressure you add after a pad is already down. On Move, pressing harder on a held pad can change some sounds while they play, and each pad is tracked on its own.',
+    lesson: '06-playing-pads',
   },
   {
     term: 'Arpeggiator',
@@ -46,6 +47,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Clip',
     slug: 'clip',
     def: 'A short piece of music on one track, usually a loop a few bars long. Each track has room for up to 8 clips, and you choose which one plays.',
+    lesson: '03-sets-tracks-clips',
   },
   {
     term: 'Count-in',
@@ -56,11 +58,13 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Drum Rack',
     slug: 'drum-rack',
     def: 'A drum kit: a set of drum sounds with one sound per pad. On a drum track, the left block of 16 pads plays the kit.',
+    lesson: '06-playing-pads',
   },
   {
     term: 'Effect',
     slug: 'effect',
     def: 'A device that changes a sound after it is made, such as reverb (a sense of space), delay (echoes) or a filter (a darker or brighter tone).',
+    lesson: '08-choosing-sounds',
   },
   {
     term: 'Encoder',
@@ -77,11 +81,13 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Instrument',
     slug: 'instrument',
     def: 'The device that makes the sound on a track: a synthesizer, a drum kit, or a sampler that plays recordings.',
+    lesson: '08-choosing-sounds',
   },
   {
     term: 'Key',
     slug: 'key',
     def: 'The home note of a piece of music, such as C or A. Melodies tend to feel settled when they come back to it.',
+    lesson: '07-scales-and-octaves',
   },
   {
     term: 'Loop',
@@ -97,11 +103,13 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Note Mode',
     slug: 'note-mode',
     def: 'The view for building one track at a time: play the pads, place notes with the step buttons, and change the sound.',
+    lesson: '04-three-views',
   },
   {
     term: 'Octave',
     slug: 'octave',
     def: 'The distance from one note to the next note with the same name, higher or lower (C up to the next C). The plus and minus buttons shift the pads by an octave.',
+    lesson: '07-scales-and-octaves',
   },
   {
     term: 'Pad',
@@ -138,11 +146,13 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Scale',
     slug: 'scale',
     def: 'A family of notes that sound good together, such as major (bright) or minor (darker). Move can lay out only the notes of your scale on the pads, so every pad fits.',
+    lesson: '07-scales-and-octaves',
   },
   {
     term: 'Scene',
     slug: 'scene',
     def: 'A column of pads in Session Mode: one clip slot from each track. Playing a scene starts those clips together, like one section of a song.',
+    lesson: '03-sets-tracks-clips',
   },
   {
     term: 'Sequencing',
@@ -153,16 +163,19 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Session Mode',
     slug: 'session-mode',
     def: 'The view that shows every clip in your Set on the pads, with one row per track, so you can launch clips and try out combinations.',
+    lesson: '04-three-views',
   },
   {
     term: 'Set',
     slug: 'set',
     def: 'One piece of music on Move: its four tracks, their sounds and all their clips. Move saves Sets automatically as you go.',
+    lesson: '03-sets-tracks-clips',
   },
   {
     term: 'Set Overview',
     slug: 'set-overview',
     def: 'The home screen for your Sets. Each pad stands for one Set slot, so you can open, create, copy or delete Sets.',
+    lesson: '04-three-views',
   },
   {
     term: 'Shift',
@@ -189,15 +202,18 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Track',
     slug: 'track',
     def: 'One lane of your Set with its own sound, such as drums, bass or chords. Every Set has four tracks, chosen with the four track buttons.',
+    lesson: '03-sets-tracks-clips',
   },
   {
     term: 'Track Preset',
     slug: 'track-preset',
     def: 'A ready-made sound for a track: one instrument plus two effects. New Sets start with presets picked at random, and you can swap them in the browser.',
+    lesson: '08-choosing-sounds',
   },
   {
     term: 'Velocity',
     slug: 'velocity',
     def: 'How hard a note is played. Hit a pad softly for a low velocity (quieter) or hard for a high velocity (louder, often brighter).',
+    lesson: '06-playing-pads',
   },
 ];

@@ -1,0 +1,87 @@
+---
+title: Scales & octaves
+part: 1
+order: 7
+summary: Play a scale on the pads, move it higher or lower, and change the key and scale your melodies use.
+needs:
+  - A Move that is switched on
+  - A Set with at least one melodic sound (not a drum kit)
+sources:
+  - Manual 6.1.1 Creating New Sets
+  - Manual 8 Note Mode
+  - Manual 9 Playing and Sequencing Notes
+  - Manual 9.1 Pad Layouts, Keys, and Scales
+  - Manual 20 Move Control Reference
+---
+
+## The idea
+
+Music uses just seven letter names for notes: **C D E F G A B**. After B the names start again at C, but the new C sounds higher. That jump from one C to the next C is called an **octave**. Two notes an octave apart sound like the same note, one high and one low.
+
+A **scale** is a set of notes that sound good together. Every scale starts on a home note called the **root**, and that home note is also called the **key** of the music. The **major** scale sounds bright and happy. A **minor** scale sounds darker or sadder. C major is simply the major scale that starts on C, and it uses only the white keys of a piano.
+
+When you first get Move, the pads show only the notes of C major. This is called **In-Key** mode. Any pad you hit belongs to the scale, so there are no "wrong" notes. That makes it a great way to make up melodies before you know any music theory.
+
+With the usual layout, each row of 8 pads holds one octave of the scale, and the root note pads light up in the track's colour. The other rows play the same notes, just higher or lower.
+
+<PadNotes
+  rows={[
+    ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
+    ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
+    ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
+    ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
+  ]}
+  highlight={['C']}
+  caption="C major on Move's pads: each row is one octave, from C on the left up to the next C on the right. The C pads (the root) glow in the track's colour."
+/>
+
+<Steps>
+  <Step press="track-2" see="The display shows the sound loaded on that track.">
+    Press the **second track button** from the top, then tap a few pads. In a new Set this track holds a bass: a **melodic** sound, where pads play higher notes as you go to the right. If each pad plays a different drum hit instead, it's a drum kit, so try another track button.
+    <Tip>In a demo Set, or after swapping sounds, the tracks may hold anything. If none of the four tracks is melodic, [Lesson 8](/first-moves/lessons/08-choosing-sounds/) shows you how to swap in a new sound. Come back here afterwards.</Tip>
+  </Step>
+  <Step press="pad-4-1 pad-4-2 pad-4-3 pad-4-4 pad-4-5 pad-4-6 pad-4-7 pad-4-8" hear="Eight notes climbing up: a major scale, from C up to the next C.">
+    Play one row of pads from left to right, one pad at a time. Any row works.
+    <Tip>If the notes don't climb step by step, the layout may have been changed earlier. You'll see how to set it below.</Tip>
+  </Step>
+  <Step press="minus" hear="The same row now plays the scale lower.">
+    Press **Minus (−)**, then play the row again.
+  </Step>
+  <Step press="plus plus" hear="The row plays higher than where you started.">
+    Press **Plus (+)** twice, and play the row once more. You have moved the whole keyboard up by one octave from where you started.
+    <Tip>Plus and Minus shift the octave of melodic sounds. If you hear no change, check that the track you picked plays notes, not drums.</Tip>
+  </Step>
+  <Step press="shift step-9" hold="shift" see="The Keys & Scales menu opens on the display.">
+    Hold **Shift**, then press **Step 9**.
+    <Tip>Nothing happened? Press your track button first so you are in Note Mode, then try again. Hold Shift down the whole time you press Step 9.</Tip>
+  </Step>
+  <Step press="wheel" see="The key entry is highlighted and ready to change.">
+    Turn **the wheel** until the key entry is highlighted (the key is C unless someone changed it), then press **the wheel**.
+  </Step>
+  <Step press="wheel" hear="The pads now play a scale that starts on your new key.">
+    Turn **the wheel** to pick a different key, such as A, and press **the wheel** to confirm. Play a row of pads to hear the new home note.
+    <Tip>If turning the wheel jumps to another menu entry instead of changing the key, the key entry isn't open yet. Turn back to it, press the wheel once, and then turn.</Tip>
+  </Step>
+  <Step press="wheel" see="The mode changes to Chromatic, and some pads go dark: those are the notes outside your scale.">
+    Turn **the wheel** to the entry for the pad mode (it shows **In-Key** or **Chromatic**) and press **the wheel** to switch it to **Chromatic**. Play a few pads: now every note is there, including the ones that don't fit your scale.
+    <Tip>If a short list opens instead of the mode switching, turn the wheel to Chromatic and press it again. In Chromatic mode the pads no longer go in octave rows. Each pad to the right is one small step higher, and each row up is five of those steps higher, a bit like the strings of a guitar.</Tip>
+  </Step>
+  <Step press="wheel" see="The mode is In-Key again, and every lit pad belongs to your scale.">
+    Press **the wheel** on the same entry to switch back to **In-Key** (or pick In-Key from the list, if one opened). The rest of the course uses In-Key.
+  </Step>
+  <Step press="back" see="The menu closes and you're back to the sound's display.">
+    Press **Back** to leave the menu.
+  </Step>
+</Steps>
+
+## Try it yourself
+
+- Open **Keys & Scales** again, find the scale entry, and try a few other scales from the list (look for a minor one). Play slowly up and down one row, then jump between rows for high and low notes.
+- Make up a short tune that starts and ends on a root pad (the ones in the track's colour). Notice how ending there sounds "finished".
+- Switch between the major and minor scales in the same key while playing the same pads. Which mood do you like more?
+
+## Good to know
+
+- Picked a new key after recording a tune? Your recorded notes stay exactly as they were. The new key only affects what you play next.
+- Each Set remembers its own key and scale, so a sad song and a happy song can live side by side.
+- The menu also has a **4ths** option that lays out the notes differently. Here, each row starts a little higher than the one below it, instead of a full octave. The octave rows are easier to start with.

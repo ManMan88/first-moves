@@ -125,7 +125,11 @@ Lesson files are named `src/content/lessons/NN-slug.mdx`, and the page URL is `/
    - Each lesson's `sources` lists the manual sections and release notes it's based on.
    - Button combinations must match the manual's *text*, not its diagram. The Shift + Step table is in research §4.
 3. **Unverified claims go on the hardware checklist.** Anything based on beta notes, forum posts or 2.x release notes goes in `docs/hardware-checklist.md` for Ron to check on his Move.
-4. **Don't assume which sounds a new Set has.** The manual says new Sets get *random* Track Presets. Lessons never assume "track 1 is drums". They teach how to tell a drum kit from a melodic sound, or how to browse to one.
+4. **Know which sounds a new Set has.** The exact presets are random, but the families are fixed (Manual 6.1.1): Drums on the top track, Bass on the second, a Pad / Synth Keys / Plucked / Rhythmic sound on the third, and Synth Lead / Winds on the bottom.
+   - Lessons may rely on this family order for a **brand-new** Set.
+   - They never rely on a specific preset.
+   - They warn that demo Sets, or tracks whose sound was swapped, can differ.
+   - (This rule was relaxed on 2026-09-25 after a fact-checker found Manual 6.1.1. The earlier wording, "random presets, never assume", came from Manual 20 alone.)
 5. **No invented screen text.** The `Screen` mock shows only display text the source material states in words. Otherwise the step describes the screen in plain words.
 6. **Copying check.** `npm run check:overlap` flags any run of 8 or more words shared by a lesson and the manual text (path given in `MANUAL_TXT`). It runs locally before content is committed; CI skips it when the file isn't available.
 7. **Linking and embedding.**

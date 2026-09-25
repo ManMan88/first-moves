@@ -22,5 +22,13 @@ describe('lesson files', () => {
     it(`${f}: file name is NN-slug.mdx`, () => {
       expect(f).toMatch(/^\d{2}-[a-z0-9-]+\.mdx$/);
     });
+    it(`${f}: has exactly one Steps block (progress is saved per lesson)`, () => {
+      expect(text.match(/<Steps[\s>]/g) ?? []).toHaveLength(1);
+    });
+    it(`${f}: every Step lights at least one control`, () => {
+      for (const m of text.matchAll(/<Step\b([^>]*)>/g)) {
+        expect(m[1], m[0]).toMatch(/\bpress="[^"]+"/);
+      }
+    });
   }
 });
