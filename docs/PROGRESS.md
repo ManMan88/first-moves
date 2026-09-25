@@ -75,8 +75,18 @@ Work happens on branch `stage-1`; it is fast-forwarded to `main` before publishi
 - Workflow script: `docs/superpowers/workflows/write-lessons-18-26.js`.
 - Added `row-N`/`column-N` aliases so a scene slide lights as one action.
 
-### Final course-continuity review 🔄
-- One reviewer-editor reads all 26 lessons in order and fixes cross-lesson state, terminology and link issues (workflow `course-continuity-review`).
+### Final course-continuity review ✅
+- One reviewer-editor read all 26 lessons in order and made 20 small fixes: links to where skills are taught, consistent track-button naming, one course Set used from Lesson 9 onwards, warnings before earlier work gets overwritten, and a phone headphone-adapter note.
+- Left as is:
+  - the example columns in Lessons 18 and 20 (the text says "your column may differ");
+  - Lesson 24 converting the bottom track (it already warns and suggests copying the Set first).
+
+## What's next (ideas, not started)
+1. **Ron checks `docs/hardware-checklist.md` on his Move.** Start with the 🔴 items. Fix any lesson that differs; the checklist names the file.
+2. **Deferred accessibility items:**
+   - the step player's double announcement;
+   - a roving tabindex and screen-reader feedback on the controls page.
+3. **Optional:** a "connected mode" using Web MIDI. It's parked; see research §5, which also lists what to verify on hardware first.
   - merge the hardware checks into the checklist;
   - add glossary links;
   - run a final course-continuity review of all 26 lessons.

@@ -243,3 +243,4 @@ Legend: 🔴 matters for a step working at all · 🟡 affects wording or tips �
 
 - [ ] 🔴 Pressing a track button selects that track, including from the Set Overview. Lessons 3, 9, 21 and 25 rely on this.
 - [ ] 🟡 A scene slide is one quick finger slide down a column. The drawing lights the whole column as a single action.
+- [ ] ⚪ Lesson 22 tells learners that many phones need a USB-C or Lightning headphone adapter. That's general phone advice rather than a Move claim.
