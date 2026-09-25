@@ -7,3 +7,4 @@ test-results/
 playwright-report/
 .shot.mjs
 .live-check.mjs
+.claude/scheduled_tasks.lock

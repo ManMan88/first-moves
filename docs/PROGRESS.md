@@ -63,7 +63,7 @@ Work happens on branch `stage-1`; it is fast-forwarded to `main` before publishi
 - ✅ Task 5: Lesson collection, step components, stepper
 - ✅ Task 6: Home, course map, glossary, about, 404
 - ✅ Task 7: End-to-end tests and copying check
-- 🔄 Task 8: Lessons 1–8 (content workflow) and hardware checklist. Workflow `write-lessons-1-8`: 4 writers (2 lessons each) → 4 fact-checkers, Opus at medium effort. If it was interrupted, check which `src/content/lessons/*.mdx` files exist and are complete, and re-run only the missing ones with the same brief (the script lives in the session's workflows dir).
+- ✅ Task 8: Lessons 1–8 written (4 writers → 4 fact-checkers) and edited; hardware checklist at `docs/hardware-checklist.md`.
 - 🔄 Task 9: Publish (create public repo, Pages) and verify live. Started early, in parallel with Task 8, to shake out deploy and base-path issues.
 - ⬜ Task 10: Whole-branch review
 
@@ -94,7 +94,12 @@ Work happens on branch `stage-1`; it is fast-forwarded to `main` before publishi
     - `@types/node` added (dev) for type-checking tests;
     - the "Lesson complete" panel reads the next-lesson link from `data-next-href` on the lesson `<article>`;
     - back-panel ports are drawn further apart than on the real device so their labels don't overlap;
-    - the manual doesn't say which track button is Track 1: `track-1` is assumed to be the top one and goes on the hardware checklist.
+    - the manual doesn't say which track button is Track 1: `track-1` is assumed to be the top one and goes on the hardware checklist. Manual 6.1.1's "top track" wording later made this very likely.
   - Task 7:
     - The e2e tests serve `dist/` with `scripts/serve-dist.mjs`. Astro 7's `astro preview` puts itself in the background when not on a TTY, so Playwright can't manage it.
     - The e2e tests also run in CI.
+  - Task 8:
+    - A fact-checker found Manual 6.1.1: a new Set's preset *families* are fixed by track (Drums top, Bass second, Pad/Keys/Plucked/Rhythmic third, Lead/Winds bottom). Spec rule 4 was relaxed to match, and lessons 3, 6 and 7 now use it.
+    - Added tests: exactly one `<Steps>` per lesson, and a `press` on every `<Step>`.
+    - Fixed a phone bug found in review: the next step scrolled under the sticky drawing.
+    - The writers' handoff notes were merged into the checklist and removed.
