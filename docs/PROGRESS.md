@@ -64,10 +64,13 @@ Work happens on branch `stage-1`; it is fast-forwarded to `main` before publishi
 - ✅ Task 6: Home, course map, glossary, about, 404
 - ✅ Task 7: End-to-end tests and copying check
 - ✅ Task 8: Lessons 1–8 written (4 writers → 4 fact-checkers) and edited; hardware checklist at `docs/hardware-checklist.md`.
-- 🔄 Task 9: Publish (create public repo, Pages) and verify live. Started early, in parallel with Task 8, to shake out deploy and base-path issues.
-- ⬜ Task 10: Whole-branch review
+- ✅ Task 9: Published. `ManMan88/first-moves` is public; Pages is deployed by GitHub Actions on every push to `main`; the live pages and the step player are verified.
+- 🔄 Task 10: Whole-branch review (workflow `review-stage-1`, one read-only reviewer, range a7c860e..c92f34a).
 
-### Stage 2: lessons 9–17 ⬜ (plan to be written after Stage 1 is live)
+### Stage 2: lessons 9–17 🔄
+- Plan: `docs/superpowers/plans/2026-09-25-first-moves-stages-2-3.md`.
+- Workflow: `docs/superpowers/workflows/write-lessons-9-17.js`, with groups (9, 10), (11, 12), (13, 14), (15, 16, 17), a writer and then a fact-checker each, at medium effort.
+- If it was interrupted: check which lesson files 09–17 exist and are complete, then re-run the script (a resume with the run id replays finished agents).
 ### Stage 3: lessons 18–26, glossary links, final review ⬜
 
 ## How to resume
