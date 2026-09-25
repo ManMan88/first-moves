@@ -1,0 +1,94 @@
+---
+title: Record live
+part: 2
+order: 11
+summary: Record what you play on the pads in real time, add more on top, and tidy up the timing with quantize.
+needs:
+  - A Move that is switched on
+  - A Set to work in (a brand-new Set from Lesson 5 is ideal)
+sources:
+  - Manual 6.1.1 Creating New Sets
+  - Manual 11.7 Quantizing Notes
+  - Manual 13 Workflow Settings
+  - Manual 13.1 Quantize
+  - Manual 13.3 Count-In and Autoload
+  - Manual 14 Recording and Capturing
+  - Manual 14.1 Recording Notes
+  - Manual 14.1.1 Recording with Count-In and Metronome
+  - Manual 17 Session Mode
+  - Manual 17.1.1 Creating New Clips
+  - Manual 20 Move Control Reference (Record, Play)
+  - Release notes 2.0.0 (Max Length)
+  - Release notes 2.0 beta (Record stops recording on audio and MIDI tracks)
+---
+
+## The idea
+
+So far you have played the pads and heard them, but nothing was kept. **[Recording](/first-moves/glossary/#recording)** changes that. You press **Record**, play, and Move writes down every note you hit, when you hit it and how hard. When you stop, your playing loops back as a [clip](/first-moves/glossary/#clip).
+
+This is different from step sequencing, where you place notes one by one on the step buttons. Recording is live: you perform, like a musician in a studio. It feels more natural, and it keeps the little human pushes and pulls in your timing.
+
+Two helpers make recording easier:
+
+- A **[count-in](/first-moves/glossary/#count-in)**. Before recording starts, Move clicks for one bar, so you can feel the speed and come in on time.
+- **Overdubbing**. Once a clip exists, you can record again into the same clip. The new notes are added on top, and the old ones stay. That way you can build a part in layers, a few notes at a time.
+
+When you listen back, some notes will land a bit early or late. **[Quantize](/first-moves/glossary/#quantize)** fixes that: it pulls each note towards the nearest step of the grid. Below, the lit steps are the four beats of a bar. A note you played just before or just after one of them gets pulled towards it.
+
+<StepGrid on={[1, 5, 9, 13]} caption="Quantize pulls each recorded note towards the closest step, so notes played slightly off the beat move onto it or close to it." />
+
+<Steps>
+  <Step press="note-session" see="Session Mode: each row of pads is one track, and each pad in a row is a place for a clip.">
+    Press **Note/Session** to switch to Session Mode. First you pick a fresh, empty spot for your recording.
+    <Tip>Not sure where you are? [Lesson 4](/first-moves/lessons/04-three-views/) shows how the views look.</Tip>
+  </Step>
+  <Step press="pad-2-1" see="The pad you pressed turns white: an empty clip slot is now selected.">
+    Press a **dark pad** in the row that belongs to your bass track. In a brand-new Set, the bass is the second track. The drawing marks one example pad; any dark pad in that row will do.
+    <Tip>A pad lit in colour already holds a clip, and pressing it may start it playing. Choose a dark pad instead. If music starts, press **Play** to stop it.</Tip>
+  </Step>
+  <Step press="track-2" see="Move is back in Note Mode, and the pads play the bass sound.">
+    Press the **track button** next to that row. This opens Note Mode on the bass track, ready to fill the empty slot you picked.
+    <Tip>Tap a few pads. If they sound like drums, this is not the bass track: demo Sets and swapped sounds can differ. Go back to Session Mode and pick a dark pad in the row of a melodic track.</Tip>
+  </Step>
+  <Step press="record" hear="One bar of metronome clicks, then recording begins.">
+    With Move stopped, press **Record**. Listen to the clicks and count along: one, two, three, four.
+    <Tip>During the count-in the Record button flashes. It turns solid red when recording has started. Don't play yet while it flashes.</Tip>
+  </Step>
+  <Step press="pads" hear="Your bass notes, as you play them.">
+    Once Record is solid red, play a short, simple bass line on the pads. Two or three notes, repeated, is plenty. Keep going for about two bars.
+    <Tip>Hitting a wrong note is fine; you can fix it later or record again. If you'd like to keep hearing clicks while you play, turn on the metronome before you press Record. [Lesson 10](/first-moves/lessons/10-tempo-metronome-groove/) shows how.</Tip>
+  </Step>
+  <Step press="record" hear="The music keeps going, and your recording plays back as a loop.">
+    Press **Record** again to stop recording.
+    <Tip>Stop late in the last bar, not just after it begins. If you stop in the first half of a bar, Move leaves that bar out of the clip. Pressing **Play** also stops recording, but it stops the music too.</Tip>
+  </Step>
+  <Step press="record" see="Record turns red again. This time you are adding to the clip you just made.">
+    While your loop is still playing, press **Record** once more. This is overdubbing: whatever you play now is added to what's already there.
+    <Tip>When you add to a clip, Record already shows red during a count-in. If you hear a bar of clicks first, wait for it to end before you play.</Tip>
+  </Step>
+  <Step press="pads" hear="Your new notes join the loop, next to the ones you recorded first.">
+    Play a few extra notes in the gaps of your bass line.
+  </Step>
+  <Step press="record" hear="The loop keeps playing, now with your extra notes in it.">
+    Press **Record** to stop adding notes.
+    <Tip>Didn't like what you added? Press **Undo**. It takes back the last thing you did.</Tip>
+  </Step>
+  <Step press="shift step-16" hold="shift" hear="Notes that were a little early or late move onto the grid, or closer to it.">
+    Hold **Shift**, then press **Step 16**. This quantizes the clip. Listen to the loop again: it should sound tighter.
+    <Tip>If it now sounds too stiff, press **Undo** to get your original timing back. Sometimes a looser feel sounds better.</Tip>
+  </Step>
+</Steps>
+
+## Try it yourself
+
+Record a drum part the same way. Pick an empty slot in the row of your drum track, then record just a kick drum for two bars. Overdub a snare on the next pass, and a hi-hat on the pass after that. Quantize at the end if the hits wander. Building a beat one drum at a time is much easier than playing all of it at once.
+
+## Good to know
+
+- Recording only happens in Note Mode. Session Mode is where you choose which slot the next recording goes into.
+- If you'd rather start recording straight away, you can switch the count-in off. Workflow Settings opens when you hold **Shift** and press **Step 3**. Select the Count-In entry and press **the wheel** to switch the count-in off. Pressing **the wheel** on it again should switch it back on.
+- How strongly quantize pulls the notes is also set in Workflow Settings. Press **the wheel** on the Quantize entry, then turn **the wheel** to change the amount.
+
+<Note kind="newer" firmware="2.0">
+  Since 2.0, pressing **Record** stops recording on audio tracks as well as on instrument tracks. Workflow Settings (**Shift** and **Step 3**) also gained a **Max Length** setting. By default a recording can grow to 16 bars; lower this setting if you want recordings to stop sooner.
+</Note>

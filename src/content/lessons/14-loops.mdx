@@ -1,0 +1,89 @@
+---
+title: Loop length & Loop Mode
+part: 2
+order: 14
+summary: Make a clip longer than one bar, double it, and change the second bar so your beat doesn't repeat the same way every time.
+needs:
+  - A Move that is switched on
+  - The one-bar beat from Lesson 9 on your drum track
+sources:
+  - Manual 9.5 Sequencing Notes
+  - Manual 11.5 Adjusting Notes in Loop Mode
+  - Manual 12 Editing Clips
+  - Manual 12.1 Loop Length
+  - Manual 12.2 Doubling the Loop
+  - Manual 12.3 Duplicating Clips
+  - Manual 12.4 Deleting Clips and Notes
+  - Manual 20 Move Control Reference
+  - Release notes 2.1.0
+---
+
+## The idea
+
+A clip is a [loop](/first-moves/glossary/#loop): when it reaches its end, it jumps back to the start and plays again. So far your beat has been one [bar](/first-moves/glossary/#bar) long, the 16 steps you can see on the step buttons. One bar going round and round is a great start, but after a while the ear gets bored.
+
+Most songs think in groups of 2, 4 or 8 bars. A longer loop gives you room for small changes. A very common trick: play the same beat for a few bars, then change the last bar a little, say with an extra snare hit or a short drum fill. That change tells the listener "here comes the start again", and the loop feels like it's going somewhere.
+
+<StepGrid on={[5, 13, 15, 16]} accent={[15, 16]} caption="An idea for the snare in bar 2: keep the hits on steps 5 and 13, and add two quick ones at the very end as a mini fill." />
+
+Move gives you two ways to work with bars:
+
+- In Note Mode, the **Left arrow** and **Right arrow** move between the bars of a clip. The step buttons then show the notes of the bar you've picked.
+- **Loop Mode** zooms out. Each step button stands for a whole bar instead of one step, so you can see and set how long the clip is. A clip can be up to 16 bars long.
+
+<Steps>
+  <Step press="play" hear="Your one-bar beat plays round and round.">
+    Make sure your drum track is selected, then press **Play**.
+    <Tip>No beat yet? Build one in [Lesson 9](/first-moves/lessons/09-first-beat/) first. If the pads start clips instead of playing sounds, press **Note/Session** to get back to Note Mode. If the step lights show a different clip, such as one from Lesson 12, press **Note/Session**, press the pad of your Lesson 9 clip in the drum row, then press that row's track button.</Tip>
+  </Step>
+  <Step press="loop" see="The step buttons now show bars. Step 1 stands for your one bar; the steps after it are dim, because those bars are outside the loop.">
+    Press **Loop** to open Loop Mode. The step buttons now stand for bars: Step 1 is bar 1, Step 2 is bar 2, and so on.
+  </Step>
+  <Step press="step-1 step-2" hold="step-1" hear="The loop is now two bars long. If the new bar is empty, you hear your beat, then a bar of silence.">
+    Hold **Step 1** and press **Step 2**. This sets the loop to run from bar 1 to bar 2, so it's now two bars long.
+    <Tip>You can also press both steps at the same moment. A bar with no notes in it plays as a gap.</Tip>
+  </Step>
+  <Step press="step-1 step-1" hear="The second bar is gone: the loop is one bar long again.">
+    Quickly press **Step 1** twice. A quick double press sets the loop to just that one bar.
+    <Tip>If nothing changed, try pressing faster. It needs to be a quick double tap, like a double-click.</Tip>
+  </Step>
+  <Step press="loop" see="The step buttons show single steps again, with your drum hits.">
+    Press **Loop** again to leave Loop Mode and get back to the normal steps.
+    <Tip>If Loop Mode doesn't close, hold **Back** for a moment. Holding it leaves the current view.</Tip>
+  </Step>
+  <Step press="shift step-15" hold="shift" hear="The beat sounds just the same, but the clip is now two bars long, with a copy of your beat in bar 2.">
+    Hold **Shift** and press **Step 15**. This **doubles the loop**: Move adds a second bar and copies all your notes into it.
+    <Tip>Unlike the gap you made before, the new bar comes filled in, so you can't hear the difference yet. You'll see it in the next step.</Tip>
+  </Step>
+  <Step press="right" see="The display tells you that you've moved to bar 2. The step buttons now show that bar's notes.">
+    Press the **Right arrow** once to go to bar 2.
+    <Tip>Pressed it too often? If you move past the end of the loop, the display shows an empty bar with a plus sign. Press the **Left arrow** to go back; the loop length stays as it was.</Tip>
+  </Step>
+  <Step press="drum-pads" hear="The snare (or clap) sound.">
+    Tap your **snare pad** to pick it. The step buttons now show where the snare plays in bar 2.
+    <Tip>Not sure which pad is the snare? Tap the pads in the left block and listen for a sharp crack or clap.</Tip>
+  </Step>
+  <Step press="step-15 step-16" hear="Every second time round, two extra snare hits end the loop with a little fill.">
+    Press **Step 15** and **Step 16** to add two snare hits at the very end of bar 2. Listen: bar 1 is unchanged, and bar 2 now ends with a fill.
+    <Tip>If a step was already lit, pressing it removed the snare from it. Press it once more to add it back. You can also try Step 14 or Step 12 until you like the fill.</Tip>
+  </Step>
+  <Step press="play" hear="The music stops.">
+    Press **Play** to stop.
+  </Step>
+</Steps>
+
+## Try it yourself
+
+- Double your loop again, so it's four bars long. Move to bar 4 with the **Right arrow** and give it a different fill from bar 2.
+- Open Loop Mode, hold the step for one bar and turn **the wheel**, the **Volume knob**, or press an arrow. Just like editing a single step in [Lesson 13](/first-moves/lessons/13-edit-steps/), this changes every note in that bar at once.
+- Hold **Loop** and turn **the wheel** to make the loop longer or shorter.
+
+## Good to know
+
+- **Be careful with Delete.** A single press of **Delete** removes the whole clip that's playing on the selected track, in Note Mode and in Loop Mode alike. In Loop Mode, holding **Delete** and pressing a step button clears all the notes in that bar. If you delete something by accident, press **Undo** straight away: it takes back your last action.
+- Want to try a big change without risking your beat? In Note Mode (outside Loop Mode), press **Copy**. Move makes a copy of the current clip and switches to it, so the original stays safe.
+- Another way to grow a loop: use the **Right arrow** to step past the last bar onto the empty one, and place some notes there. That bar then becomes part of the loop.
+
+<Note kind="newer" firmware="2.1">
+  Move can now use time signatures other than four beats to a bar. You choose one in Workflow Settings (**Shift** + **Step 3**), and it applies to the Set you have open. New clips then get a bar length to match; clips you already made keep their length. If one bar needs more than 16 steps, it spreads over more than one page of step buttons, and the **Left arrow** and **Right arrow** take you between the pages.
+</Note>

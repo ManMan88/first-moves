@@ -95,3 +95,69 @@ Legend: 🔴 matters for a step working at all · 🟡 affects wording or tips �
 - [ ] 🟡 With Autoload on, pressing the wheel on a preset closes the browser and keeps that preset.
 - [ ] 🟡 After tweaking knobs, re-opening the browser keeps the tweaked sound until you turn the wheel. **Undo** brings it back if you do turn it.
 - [ ] 🟡 In 2.x, the **Audio Track** entry is at the very top of the main category list (release notes 2.0).
+
+## Lesson 9: Beats, bars & steps (`09-first-beat.mdx`)
+
+- [ ] 🔴 Tapping a drum pad (while not recording) selects it: after that, step presses add or remove that pad's notes, and the step lights show only that pad's notes.
+- [ ] 🟡 Holding a step that has a note doesn't remove it; only a brief press does (Manual 9.5).
+
+## Lesson 10: Tempo, metronome & groove (`10-tempo-metronome-groove.mdx`)
+
+- [ ] 🟡 Pressing the wheel on the Tempo setting keeps the new tempo. Also note which direction of the wheel speeds it up.
+- [ ] 🟡 The groove icon under Step 7 and the metronome icon under Step 6 are visible without holding Shift.
+- [ ] 🟡 A second Shift + Step 6 turns the metronome off, even while the Metronome setting is still on the display.
+- [ ] 🔴 Swing delays only the even-numbered steps (2, 4 … 16), so hi-hats on Steps 4/8/12/16 audibly swing. The lesson's StepGrid and a tip rely on this.
+- [ ] 🟡 Groove changes only playback timing; notes stay on the same step buttons.
+
+## Lesson 11: Record live (`11-record-live.mdx`)
+
+- [ ] 🔴 In Session Mode, the second row of pads is the second track (bass in a new Set), and the track button next to that row opens it.
+- [ ] 🟡 When you overdub with Record while the loop plays, Record turns red and there may be a bar of count-in first.
+- [ ] 🟡 Undo takes back a whole recording pass, an overdub, or a quantize.
+- [ ] 🟡 **Max Length** is in Workflow Settings (Shift + Step 3) from 2.0, with a 16-bar default (release notes 2.0.0).
+- [ ] 🟡 Since 2.0, pressing Record again stops recording on audio tracks as well as instrument tracks.
+- [ ] 🟡 Pressing the wheel on the Count-In entry again switches the count-in back on.
+
+## Lesson 12: Capture (`12-capture.mdx`)
+
+- [ ] 🔴 In Session Mode the top row is the drum track in a new Set, and the track button next to it opens it.
+- [ ] 🟡 Straight after a capture with Move stopped, turning the wheel moves through the other tempo estimates.
+- [ ] 🟡 A second Capture while the captured clip plays adds the new notes to that clip.
+- [ ] 🟡 After Shift + Capture, the Capture button light goes dark.
+
+## Lesson 13: Edit steps (`13-edit-steps.mdx`)
+
+- [ ] 🔴 Holding a step and turning the **Volume knob** changes that note's velocity. Also note which direction makes it louder.
+- [ ] 🟡 On a drum track, a velocity edit or nudge on a held step changes only the selected pad's note.
+- [ ] 🔴 **Shift + Step 14** (standalone mode) prepares a new empty clip on the selected track while music plays, and new notes play in time. The manual text only mentions this combo for Control Live Mode; standalone use comes from release notes 1.4. Lessons 13 and 15 rely on it.
+- [ ] 🟡 Holding a step and briefly pressing a later step stretches the note up to that step. Holding several steps together selects them all instead.
+- [ ] 🟡 A semitone transpose with Plus can land on a note outside the Set's scale.
+- [ ] 🟡 To get back to the Lesson 9 clip: press Note/Session, press its pad in the drum row, then that row's track button.
+
+## Lesson 14: Loop length & Loop Mode (`14-loops.mdx`)
+
+- [ ] 🟡 In Loop Mode, holding Step 1 and pressing Step 2 adds an empty bar, which plays as silence.
+- [ ] 🟡 Pressing **Loop** again leaves Loop Mode. The fallback is to hold Back.
+- [ ] 🟡 After Shift + Step 15 on a step-sequenced clip, the Right arrow shows bar 2 with a copy of bar 1's notes.
+- [ ] 🟡 A quick double press of Step 1 in Loop Mode sets the loop back to one bar, even during playback.
+- [ ] 🟡 Undo brings back a clip deleted with Delete.
+- [ ] 🟡 **2.1 time signatures:** bars longer than 16 steps continue on extra pages, reached with the Left and Right arrows.
+
+## Lesson 15: Bassline & chords (`15-bassline-and-chords.mdx`)
+
+- [ ] 🔴 In the default In-Key Octaves layout the leftmost pad of each row is the root, pads 1-3-5 of a row make the home chord, and pads 4-6-8 make a second chord in the key. The drawing uses the bottom row.
+- [ ] 🔴 Holding a melodic pad (or three pads) and pressing a step places that note or chord on the step.
+- [ ] 🟡 The copied steps stay on the clipboard after switching tracks, and pasting onto Step 1 of the other track creates the notes there.
+
+## Lesson 16: Arpeggiator & note repeat (`16-arp-and-repeat.mdx`)
+
+- [ ] 🟡 After Shift + Step 11 closes the Repeat menu, pads play single notes again (the style doesn't stay active).
+- [ ] 🔴 On a drum track, holding a pad while the Repeat menu is open plays a continuous roll at the chosen rate.
+- [ ] 🟡 On a melodic track, you reach the **Rate** entry with the wheel and change it (possibly pressing the wheel first).
+- [ ] 🟡 After choosing Arp Up and pressing the wheel, the display shows Arp Up as the style.
+
+## Lesson 17: Shape the sound (`17-shape-the-sound.mdx`)
+
+- [ ] 🟡 Turning the wheel from the whole-preset selection highlights single devices (instrument or an effect), and many melodic presets have a knob whose name mentions the filter.
+- [ ] 🟡 After holding **Delete** and touching an automated knob, the sound stops changing by itself.
+- [ ] ⚪ On sampler sounds, holding Shift while turning some knobs gives finer changes, and Shift + tap on some knobs switches to a second setting.

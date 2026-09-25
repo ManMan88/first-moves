@@ -17,31 +17,49 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Arpeggiator',
     slug: 'arpeggiator',
     def: 'A helper that turns the notes you hold into a pattern of single notes played one after another (up, down or in random order), in time with the tempo.',
+    lesson: '16-arp-and-repeat',
   },
   {
     term: 'Automation',
     slug: 'automation',
     def: 'Knob movements that Move remembers. Turn a knob while recording and the change plays back every time the clip loops.',
+    lesson: '17-shape-the-sound',
   },
   {
     term: 'Bar',
     slug: 'bar',
     def: 'A group of beats. Most music counts 4 beats to a bar. With the default settings, one bar fills all 16 step buttons.',
+    lesson: '09-first-beat',
+  },
+  {
+    term: 'Bassline',
+    slug: 'bassline',
+    def: 'The low part of a song, usually played on a bass sound. It often locks in with the kick drum and holds the music together.',
+    lesson: '15-bassline-and-chords',
   },
   {
     term: 'Beat',
     slug: 'beat',
     def: 'The steady pulse you tap your foot to. On Move each beat is 4 steps long by default, so steps 1, 5, 9 and 13 each start a new beat.',
+    lesson: '09-first-beat',
   },
   {
     term: 'BPM',
     slug: 'bpm',
     def: 'Beats per minute: how fast the music goes. At 120 BPM you hear two beats every second. Also called the tempo.',
+    lesson: '10-tempo-metronome-groove',
   },
   {
     term: 'Capture',
     slug: 'capture',
     def: 'Move’s safety net. It keeps listening to what you play even when you are not recording, and pressing the Capture button turns that playing into a clip.',
+    lesson: '12-capture',
+  },
+  {
+    term: 'Chord',
+    slug: 'chord',
+    def: 'Three or more notes played at the same time. On Move you can hold several pads together, or place them all on one step.',
+    lesson: '15-bassline-and-chords',
   },
   {
     term: 'Clip',
@@ -53,6 +71,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Count-in',
     slug: 'count-in',
     def: 'A short countdown of clicks before recording starts, so you have time to get ready and come in on the beat.',
+    lesson: '11-record-live',
   },
   {
     term: 'Drum Rack',
@@ -73,9 +92,16 @@ export const GLOSSARY: GlossaryEntry[] = [
     lesson: '01-tour',
   },
   {
+    term: 'Filter',
+    slug: 'filter',
+    def: 'An effect that takes away part of a sound, often the highs, so it gets darker or thinner. Slowly turning a filter knob is a classic way to build tension.',
+    lesson: '17-shape-the-sound',
+  },
+  {
     term: 'Groove',
     slug: 'groove',
     def: 'A timing shift that makes a rhythm feel looser and less robotic. Move’s groove is a swing: every other short note arrives a little late.',
+    lesson: '10-tempo-metronome-groove',
   },
   {
     term: 'Instrument',
@@ -93,17 +119,25 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Loop',
     slug: 'loop',
     def: 'A stretch of music that repeats. Clips on Move loop again and again until you stop them.',
+    lesson: '14-loops',
   },
   {
     term: 'Metronome',
     slug: 'metronome',
     def: 'A click that sounds on every beat, to help you keep time while you play or record.',
+    lesson: '10-tempo-metronome-groove',
   },
   {
     term: 'Note Mode',
     slug: 'note-mode',
     def: 'The view for building one track at a time: play the pads, place notes with the step buttons, and change the sound.',
     lesson: '04-three-views',
+  },
+  {
+    term: 'Note repeat',
+    slug: 'note-repeat',
+    def: 'A setting that plays a held pad again and again at a steady rate: handy for fast hi-hat rolls.',
+    lesson: '16-arp-and-repeat',
   },
   {
     term: 'Octave',
@@ -121,16 +155,24 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Quantize',
     slug: 'quantize',
     def: 'Snapping notes to the nearest step of the grid, to tidy up timing that came out a little early or late.',
+    lesson: '11-record-live',
   },
   {
     term: 'Recording',
     slug: 'recording',
     def: 'Playing notes or turning knobs while Move writes what you do into a clip, in real time.',
+    lesson: '11-record-live',
   },
   {
     term: 'Resampling',
     slug: 'resampling',
     def: 'Recording what Move itself is playing as a new sample, so a whole beat or a processed sound becomes something you can play from a single pad.',
+  },
+  {
+    term: 'Root',
+    slug: 'root',
+    def: 'The home note of a scale or chord: the one the other notes are built on. On Move’s pads the root notes glow in the track’s colour.',
+    lesson: '07-scales-and-octaves',
   },
   {
     term: 'Sample',
@@ -158,6 +200,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Sequencing',
     slug: 'sequencing',
     def: 'Placing notes on a grid of steps instead of playing them live. Move repeats the pattern for you, so timing is always exact.',
+    lesson: '09-first-beat',
   },
   {
     term: 'Session Mode',
@@ -192,11 +235,13 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Step',
     slug: 'step',
     def: 'One slot in the pattern grid, shown by one of the 16 step buttons. With the default settings each step is a 16th note: a quarter of a beat.',
+    lesson: '09-first-beat',
   },
   {
     term: 'Tempo',
     slug: 'tempo',
     def: 'The speed of the music, measured in BPM (beats per minute). Every track in a Set follows the same tempo.',
+    lesson: '10-tempo-metronome-groove',
   },
   {
     term: 'Track',

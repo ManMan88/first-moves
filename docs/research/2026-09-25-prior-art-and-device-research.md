@@ -135,7 +135,7 @@ and doesn't mention Move.
   - The Record button now stops recording on both audio and MIDI tracks.
 - **Workflow Settings (Shift + Step 3):**
   - Time Signature (2.1). Bars longer than 16 steps continue on extra step-sequencer pages, reached with the left/right arrow buttons.
-  - Max Length for recording.
+  - Max Length for recording (2.0.0; corrected 2026-09-25 against the release notes).
 - **Monitoring:** a fixed monitoring-track entry in the settings menu (2.0).
 - **Bounce (2.1):** copy a clip in Session Mode, then paste it into an audio clip slot or a drum pad.
 - **Mono (2.1):** mic recordings are now mono, and there's a new "Line in – Mono" option.
@@ -153,7 +153,7 @@ Build lessons from this table, not from the controls diagram (the diagram is eas
 |---|---|
 | Shift + Step 1 | Set Overview |
 | Shift + Step 2 | Setup menu |
-| Shift + Step 3 | Workflow Settings (Quantize, Step Grid, Count-In, Autoload; Time Signature and Max Length in 2.1) |
+| Shift + Step 3 | Workflow Settings (Quantize, Step Grid, Count-In, Autoload; Max Length from 2.0; Time Signature from 2.1) |
 | Shift + Step 5 | Tempo |
 | Shift + Step 6 | Metronome |
 | Shift + Step 7 | Groove (swing) |

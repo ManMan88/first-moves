@@ -1,0 +1,98 @@
+---
+title: Bassline & chords
+part: 3
+order: 15
+summary: Step-sequence a simple bassline and a pair of chords that fit together with your drums.
+needs:
+  - A Move that is switched on
+  - A Set with a drum beat in it (the beat from Lesson 9 is perfect)
+sources:
+  - Manual 6.1.1 Creating New Sets
+  - Manual 9.1 Pad Layouts, Keys, and Scales
+  - Manual 9.5 Sequencing Notes
+  - Manual 11.3 Note Length
+  - Manual 11.8 Copying Notes and Step Ranges
+  - Manual 11.9 Adding or Removing Multiple Notes from Steps
+  - Manual 20 Move Control Reference
+  - Release notes 1.4 (new clip with Shift + Step 14)
+---
+
+## The idea
+
+Your beat has rhythm. Now it needs notes. Most songs rest on two layers of notes under the melody: a **bassline** and **chords**.
+
+A **bassline** is a part made of low notes. It works best when it hits together with the kick drum: the two lock into one deep thump that people feel as much as hear. The simplest bassline plays just one note, the **root**. That is the home note of your key (C, unless you changed it in [Lesson 7](/first-moves/lessons/07-scales-and-octaves/)). On the pads, the root is every pad that glows in the track's colour.
+
+A **chord** is three or more notes played at the same moment. With the pads in **In-Key** mode (the setting Move starts with), every pad is a note of your scale, so there is an easy trick: press one pad, skip one, press the next, skip one, press the next. That three-note shape always gives you a chord that fits your key. Start the shape on the root and you get the home chord. Start it three pads further right and you get a different chord that still belongs to the same key.
+
+<PadNotes
+  rows={[
+    ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
+    ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
+    ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
+    ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
+  ]}
+  highlight={['C', 'E', 'G']}
+  caption="The skip-one shape in C major: C, E and G, the 1st, 3rd and 5th pads of a row, make the home chord. The 4th, 6th and 8th pads (F, A and C) make a second chord."
+/>
+
+On a melodic track you build a pattern the same way as on drums, but with notes. Hold the pad (or pads) you want, then press a step button: those notes go on that step. Here is where the bass will go, on the four beats of the bar:
+
+<StepGrid on={[1, 5, 9, 13]} caption="A simple bassline: the root note on steps 1, 5, 9 and 13, the first step of each beat. These are the same steps as the four-on-the-floor kick from Lesson 9, so bass and kick hit together." />
+
+<Steps>
+  <Step press="track-2" see="The second track is selected, and its pads light up with its notes.">
+    Press the **second track button** from the top. In a brand-new Set this track holds a bass sound.
+    <Tip>Demo Sets, or tracks whose sound you swapped, may hold something else. Tap a few pads: if the sound is deep and low, you're in the right place. If not, try the other track buttons, or load a bass sound as in [Lesson 8](/first-moves/lessons/08-choosing-sounds/).</Tip>
+  </Step>
+  <Step press="shift step-14" hold="shift" see="The step buttons show an empty bar: the bass track has a fresh clip to fill.">
+    Hold **Shift** and press **Step 14**. This gives the bass track a new, empty clip, so the bass notes from [Lesson 13](/first-moves/lessons/13-edit-steps/) stay safe in their own clip.
+    <Tip>Keep **Shift** held down until you have pressed Step 14. If something unexpected changed, press **Undo** and try again.</Tip>
+  </Step>
+  <Step press="pad-4-1" hear="A low bass note: the root of your key.">
+    Tap a pad that glows in the track's colour, at the left end of a row. That's a root note.
+    <Tip>If it sounds too high for a bass, press **Minus (−)** once or twice to shift the pads down an octave.</Tip>
+  </Step>
+  <Step press="pad-4-1 step-1" hold="pad-4-1" hear="The bass note plays on the first step of every bar, along with your drums.">
+    Keep holding that root pad, and press **Step 1**. Then let go of both.
+    <Tip>If the music was stopped, it starts by itself when this first note goes into the empty clip. A quick press on a step that already has a note removes that note, so if Step 1 went dark again, hold the pad and press Step 1 once more.</Tip>
+  </Step>
+  <Step press="pad-4-1 step-5 step-9 step-13" hold="pad-4-1" hear="Four bass notes per bar, one on each beat.">
+    Put the same root note on **Step 5**, **Step 9** and **Step 13**: for each one, hold the root pad and press the step.
+    <Tip>Did your beat from [Lesson 9](/first-moves/lessons/09-first-beat/) end up with the kick on other steps? Put the bass on those steps instead, so the two land together.</Tip>
+  </Step>
+  <Step press="track-3" see="The third track is selected. Your bassline keeps playing.">
+    Press the **third track button** from the top. In a brand-new Set it holds a pad, keys, plucked or rhythmic sound: good for chords.
+    <Tip>Tap a few pads first. If they each play a different drum hit, this track is a drum kit; pick another track or sound. If some step buttons on this track are already lit white, it has notes from earlier: hold **Shift** and press **Step 14** to start a fresh clip here too.</Tip>
+  </Step>
+  <Step press="pad-4-1 pad-4-3 pad-4-5 step-1" hold="pad-4-1 pad-4-3 pad-4-5" hear="A full chord on the first step of the bar, over your bass.">
+    In one row, hold three pads at once: the root on the left, the 3rd pad and the 5th pad. While holding them, press **Step 1**.
+    <Tip>If the chord sounds sour, the pads may not be in In-Key mode, or the scale may have fewer than seven notes. Hold **Shift** and press **Step 9** to check, as in [Lesson 7](/first-moves/lessons/07-scales-and-octaves/).</Tip>
+  </Step>
+  <Step press="pad-4-4 pad-4-6 pad-4-8 step-5" hold="pad-4-4 pad-4-6 pad-4-8" hear="Two chords now take turns: the home chord, then a new one.">
+    Now hold the 4th, 6th and 8th pads of the same row, and press **Step 5**.
+    <Tip>To fix a chord later, hold its step: the pads that belong to it light up white. While you keep holding the step, tap pads to add or remove notes.</Tip>
+  </Step>
+  <Step press="copy step-1 step-8" hold="copy step-1" see="The sound doesn't change yet: Steps 1 to 8 are waiting on the clipboard.">
+    Hold **Copy**. Keep it down, press and hold **Step 1**, then press **Step 8**. Now let go of **Copy** and **Step 1**.
+    <Tip>Changed your mind? Press **Copy** again to empty the clipboard.</Tip>
+  </Step>
+  <Step press="step-9" hear="Both chords now play twice per bar, in the second half as well as the first.">
+    Press **Step 9**. The copied steps are pasted from there on, in the same order, with the gaps kept.
+    <Tip>Nothing pasted? Make sure you let go of both **Copy** and **Step 1** before you press Step 9. If in doubt, repeat the copy step and try again.</Tip>
+  </Step>
+</Steps>
+
+Listen to all three parts together: drums, bass and chords. When you're done, press **Play** to stop.
+
+## Try it yourself
+
+- Give the bassline a little movement. On the bass track, hold the 5th pad of the row (a note that always fits under the home chord) and put it on **Step 15**, just before the loop starts again.
+- Try the skip-one shape starting on other pads, such as the 2nd or the 3rd. Every start gives a chord in your key. Which pair of chords sounds happiest? Which sounds saddest?
+- Copy the whole chord part (Steps 1 to 16), press the bottom track button, and paste it there with **Step 1**. Now the same chords play on a lead sound too. To move them higher, hold their steps and change the pitch as in [Lesson 13](/first-moves/lessons/13-edit-steps/).
+
+## Good to know
+
+- Notes you put on a step are short. On soft pad or keys sounds, chords may sound like quick blips. To stretch a chord, hold its step and turn **the wheel** to the right, as in [Lesson 13](/first-moves/lessons/13-edit-steps/). Hold several steps at once to stretch them all together.
+- Each track has its own clip, so the bass and the chords can be changed without touching the drums.
+- The copy and paste trick works across tracks, clips and even Sets. It's a quick way to reuse a chord pattern you like.
