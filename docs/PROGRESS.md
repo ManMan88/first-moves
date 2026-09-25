@@ -62,9 +62,9 @@ Work happens on branch `stage-1`; it is fast-forwarded to `main` before publishi
 - ✅ Task 4: Progress store
 - ✅ Task 5: Lesson collection, step components, stepper
 - ✅ Task 6: Home, course map, glossary, about, 404
-- 🔄 Task 7: End-to-end tests and copying check
-- ⬜ Task 8: Lessons 1–8 (content workflow) and hardware checklist
-- ⬜ Task 9: Publish (create public repo, Pages) and verify live
+- ✅ Task 7: End-to-end tests and copying check
+- 🔄 Task 8: Lessons 1–8 (content workflow) and hardware checklist. Workflow `write-lessons-1-8`: 4 writers (2 lessons each) → 4 fact-checkers, Opus at medium effort. If it was interrupted, check which `src/content/lessons/*.mdx` files exist and are complete, and re-run only the missing ones with the same brief (the script lives in the session's workflows dir).
+- 🔄 Task 9: Publish (create public repo, Pages) and verify live. Started early, in parallel with Task 8, to shake out deploy and base-path issues.
 - ⬜ Task 10: Whole-branch review
 
 ### Stage 2: lessons 9–17 ⬜ (plan to be written after Stage 1 is live)
@@ -95,3 +95,6 @@ Work happens on branch `stage-1`; it is fast-forwarded to `main` before publishi
     - the "Lesson complete" panel reads the next-lesson link from `data-next-href` on the lesson `<article>`;
     - back-panel ports are drawn further apart than on the real device so their labels don't overlap;
     - the manual doesn't say which track button is Track 1: `track-1` is assumed to be the top one and goes on the hardware checklist.
+  - Task 7:
+    - The e2e tests serve `dist/` with `scripts/serve-dist.mjs`. Astro 7's `astro preview` puts itself in the background when not on a TTY, so Playwright can't manage it.
+    - The e2e tests also run in CI.
