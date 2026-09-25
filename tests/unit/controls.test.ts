@@ -40,6 +40,12 @@ describe('controls registry', () => {
     for (const n of [4, 12, 13]) expect(CONTROL_MAP.get(`step-${n}`)?.shift, `step-${n}`).toBeUndefined();
   });
 
+  it('has row and column aliases for slides across the pads', () => {
+    expect(ALIASES['column-2']).toEqual(['pad-1-2', 'pad-2-2', 'pad-3-2', 'pad-4-2']);
+    expect(ALIASES['row-4']).toEqual(['pad-4-1', 'pad-4-2', 'pad-4-3', 'pad-4-4', 'pad-4-5', 'pad-4-6', 'pad-4-7', 'pad-4-8']);
+    expect(resolveSequence('column-8')).toHaveLength(1);
+  });
+
   it('aliases expand only to known ids', () => {
     for (const ids of Object.values(ALIASES)) for (const id of ids) expect(CONTROL_MAP.has(id), id).toBe(true);
     expect(ALIASES['drum-pads']).toHaveLength(16);

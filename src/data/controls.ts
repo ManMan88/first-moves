@@ -173,6 +173,8 @@ export const ALIASES: Record<string, string[]> = {
   steps: steps.map((s) => s.id),
   encoders: encoders.map((e) => e.id),
   tracks: tracks.map((t) => t.id),
+  ...Object.fromEntries(range(8).map((col) => [`column-${col}`, range(4).map((row) => `pad-${row}-${col}`)])),
+  ...Object.fromEntries(range(4).map((row) => [`row-${row}`, range(8).map((col) => `pad-${row}-${col}`)])),
 };
 
 /** One group of control ids per token in `spec`, in order. Throws on an unknown token. */

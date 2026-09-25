@@ -1,0 +1,91 @@
+---
+title: Sample with the mic
+part: 5
+order: 21
+summary: Record a sound with Move's built-in microphone onto a pad, then play it like any other drum sound.
+needs:
+  - A Move that is switched on
+  - A Set open in Note Mode (a brand-new Set is perfect)
+  - Nothing plugged into the Audio in port
+  - Something to make a noise with, like your hands, a table or your voice
+video:
+  id: OOd4-qFlum8
+  title: Sampling with the microphone
+sources:
+  - Manual 6.1.1 Creating New Sets
+  - Manual 15 Sampling
+  - Manual 15.1 Sampling Mode
+  - Manual 15.2 Selecting a Sampling Input Source
+  - Manual 15.3 Recording Samples
+  - Manual 15.4 Mic and Line In Sampling
+  - Manual 15.4.1 Adjusting Sampling Input Gain
+  - Manual 15.4.2 Turning Monitoring On or Off
+  - Manual 15.9 Adjusting Sample Parameters
+  - Manual 15.9.1 Sample Parameters in Drum Sampler
+  - Release notes 2.1.0
+---
+
+## The idea
+
+A **[sample](/first-moves/glossary/#sample)** is a short piece of recorded sound that you can play back from a pad. The drum kits you've used so far are made of samples: someone recorded a real kick drum, a snare and a hi-hat, and Move plays those recordings back when you hit a pad. **[Sampling](/first-moves/glossary/#sampling)** simply means making your own.
+
+Move has a small microphone built in, so anything around you can become an instrument. Knock on a table and you have a kick. Shake a bunch of keys and you have a hi-hat. Click your tongue, snap your fingers, say "ha!". Once a sound sits on a pad, you can play it, put it in a beat and change it with the knobs, just like the sounds that came with Move.
+
+Before you record, it helps to know about **gain**. Gain is how sensitive the microphone is. With too little gain, your sound comes out faint, and turning it up later also turns up the hiss. With too much, loud sounds get squashed and crunchy, a harsh effect called distortion (or clipping). You're looking for the middle: loud and clear, but clean.
+
+Recording a sample on Move takes a single move: you press the pad you want the sound on, and recording starts right there. When you stop, the sound is already saved on that pad, ready to play.
+
+<Steps>
+  <Step press="track-1" see="The top track is selected. In a new Set its pads play a drum kit.">
+    Press the **top track button**. In a brand-new Set it always holds a drum kit, so each of the 16 left pads can hold a different sound.
+    <Tip>If tapping a pad starts or stops a clip, you are in Session Mode. Press **Note/Session** to switch to Note Mode first. If this track doesn't sound like drums (a demo Set, or a sound you swapped), press the other track buttons until you find a drum kit.</Tip>
+  </Step>
+  <Step press="sampling" see="The Sampling button pulses red, the drum pads turn pink, and the display asks you to press a pad.">
+    Press **Sampling**. Move is now in Sampling Mode and waits for you to choose a pad.
+    <Screen lines={["Press pad"]} />
+    <Tip>Changed your mind? Press **Sampling** again, or **Back**, to leave without recording anything.</Tip>
+  </Step>
+  <Step press="wheel" see="The display shows which input Move will record from. A small microphone icon means the built-in mic.">
+    Touch **the wheel** (don't turn it yet) to check the input source. If the icon isn't a microphone, make sure the source icon is highlighted, then press **the wheel** to step through the sources until the microphone shows.
+    <Tip>Once you touch the wheel, the display may say Sampling instead of asking for a pad. That's normal: nothing records until you press a pad. Move offers the mic only when nothing is plugged into the **Audio in** port. If a cable is in there, unplug it. Move remembers the last source you used, so next time it will start on the mic.</Tip>
+  </Step>
+  <Step press="wheel wheel" see="The Gain setting opens.">
+    Turn **the wheel** until the input levels icon is highlighted, then press **the wheel**. This opens the Gain setting.
+  </Step>
+  <Step press="wheel" see="The gain value changes as you turn.">
+    Turn **the wheel** to set the gain. For a first try, leave it somewhere in the middle. You can always record again with more or less.
+    <Tip>Loud sounds, like a hard clap close to Move, need less gain. Quiet sounds, like a whisper or a soft tap, need more.</Tip>
+  </Step>
+  <Step press="drum-pads" hold="drum-pads" see="The pad pulses red and the display says Recording….">
+    Get your sound ready. Press and hold one of the pink drum pads, make your sound (a clap, a knock on the table, a short word), then let go of the pad.
+    <Tip>Recording starts the instant you press, so make the sound straight away. You can also tap the pad once to start and tap it again to stop, if you need both hands free. Either way, Sampling Mode closes by itself when you stop.</Tip>
+  </Step>
+  <Step press="drum-pads" hear="Your own sound, played back from the pad.">
+    Tap the pad you just recorded on. Play it a few times, fast and slow, and listen.
+    <Tip>Too quiet or crunchy? Just record again: press **Sampling**, change the gain, and press a pad. There's no limit on how many tries you take.</Tip>
+  </Step>
+  <Step press="drum-pads volume" hold="drum-pads" hear="Your sample gets louder or softer.">
+    Hold down your pad and turn the **Volume knob** to set how loud this one sample plays next to the rest of the kit.
+  </Step>
+  <Step press="encoder-2" hear="The sample now starts later or earlier. Turn it until the sound begins right away.">
+    Touch **Knob 2**: the display should name it Sample Start. Turn it slowly to the right to skip any silence before your sound, so the pad reacts the moment you hit it.
+    <Tip>If Knob 2 shows a different setting, an effect is selected. Turn **the wheel** until all the icons are highlighted together, then try again. Went too far and cut off the start of your sound? Turn it back to the left.</Tip>
+  </Step>
+</Steps>
+
+## Try it yourself
+
+Make a whole kit from things around you. Record a low knock (your kick), a sharp clap or snap (your snare) and a quick *tss* or jingle of keys (your hi-hat), each on its own pad. Then build a beat with them using the step buttons, as in [Lesson 9](/first-moves/lessons/09-first-beat/).
+
+Feeling brave? Touch **Knob 1** on one of your samples: it's Transpose, and turning it makes the sound higher or lower. A knock tuned way down makes a surprisingly good kick.
+
+## Good to know
+
+- Every recording is also saved in the browser, in a category called User Recordings, so you can load it again in other Sets. Move names it after your Set, with a number, like "Set 5 Rec 1".
+- You can sample onto a melodic track too. Then every pad plays your sound at a different pitch, so a sung note or a whistle becomes a playable instrument. If that track had a synth, Move swaps it for a sampler; press **Undo** if you want the synth back (your recording stays in User Recordings).
+- With headphones plugged in, a headphones icon appears in the Sampling menu. Turn **the wheel** to it and press **the wheel** to turn **monitoring** on, so you hear the mic in your headphones while you record. Monitoring stays on after you leave Sampling Mode, until you unplug or switch it off.
+- One sample can be up to four minutes long.
+
+<Note kind="newer" firmware="2.1">
+  Since Move 2.1, recordings from the built-in mic are saved in **mono**: one channel instead of two. You record and play them exactly as in this lesson.
+</Note>

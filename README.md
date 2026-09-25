@@ -33,7 +33,7 @@ Lessons live in `src/content/lessons/NN-slug.mdx`. Steps name the controls to li
 </Steps>
 ```
 
-Control ids and aliases (`pads`, `drum-pads`, `steps`, `encoders`, `tracks`) are defined in
+Control ids and aliases (`pads`, `drum-pads`, `right-pads`, `steps`, `encoders`, `tracks`, `row-1`…`row-4`, `column-1`…`column-8`) are defined in
 `src/data/controls.ts`; an unknown id fails the build. Every lesson lists its `sources`, and
 claims that could not be confirmed from the manual text go in `docs/hardware-checklist.md`.
 

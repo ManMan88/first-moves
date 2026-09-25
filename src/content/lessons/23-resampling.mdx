@@ -1,0 +1,85 @@
+---
+title: Resampling
+part: 5
+order: 23
+summary: Record what Move itself is playing onto a single pad, then play and reshape that recording as a brand-new sound.
+needs:
+  - A Move that is switched on
+  - A Set with a beat on its drum track, such as the one from Lesson 9
+  - Move stopped (press Play if it's running)
+sources:
+  - Manual 15 Sampling
+  - Manual 15.1 Sampling Mode
+  - Manual 15.2 Selecting a Sampling Input Source
+  - Manual 15.3 Recording Samples
+  - Manual 15.5 Resampling
+  - Manual 15.6 Sampling Audio via USB-C
+  - Manual 15.7 Multi-pad recording
+  - Manual 15.9 Adjusting Sample Parameters
+  - Manual 15.9.1 Sample Parameters in Drum Sampler
+  - Release notes 2.1.0
+---
+
+## The idea
+
+So far you've sampled sounds from outside Move. **[Resampling](/first-moves/glossary/#resampling)** points the recorder at Move itself: whatever Move is playing, all tracks together with their effects, gets recorded onto one pad.
+
+Why would you want that? Two big reasons.
+
+- **Freezing.** A whole beat, with its kick, snare, hi-hats and effects, turns into one sound on one pad. Tap the pad and the entire beat plays. You can drop it into a new idea, or play it next to a completely different beat.
+- **New sounds from old ones.** Once your beat is a sample, you can bend it in ways the original never could. Pitch it way down and it becomes slow and heavy. Resample that result, and you can keep going, stacking changes on changes until the sound is unrecognisable.
+
+When you resample with Move stopped, playback starts at the same moment as the recording. That means your sample begins exactly at the top of the beat, which makes it easy to get a recording that loops neatly.
+
+<Steps>
+  <Step press="track-1" see="The drum track is selected.">
+    Press the **track button** of the track that holds your beat's drums. In a Set that started out new, that's the top one.
+    <Tip>If tapping a pad starts or stops a clip, you are in Session Mode. Press **Note/Session** to switch to Note Mode. If you swapped sounds or use a demo Set, your drums may be on another track: press the track buttons until the pads play a drum kit.</Tip>
+  </Step>
+  <Step press="drum-pads" see="The step buttons show the notes of each pad you tap. On a spare pad, they all stay dark.">
+    Tap the drum pads one at a time and watch the step buttons. Find a pad whose steps are all dark: your beat doesn't use it, so it's safe to record over.
+    <Tip>As you saw in [Lesson 9](/first-moves/lessons/09-first-beat/), the step buttons only show the notes of the selected pad. A pad with no lit steps plays no part in the beat.</Tip>
+  </Step>
+  <Step press="sampling" see="The Sampling button pulses red and the display asks you to press a pad.">
+    Press **Sampling**.
+  </Step>
+  <Step press="wheel" see="A speaker icon: Move will now record its own output.">
+    Touch **the wheel** to see the input source. If it isn't the speaker icon, make sure the source icon is highlighted, then press **the wheel** to step through the sources until the speaker shows. That's the Resampling source.
+    <Tip>After you touch the wheel, the display may say Sampling instead of asking for a pad. Nothing records until you press a pad. Move remembers the last source you used. Next time you want the microphone, you'll need to switch back.</Tip>
+  </Step>
+  <Step press="drum-pads" see="The pad pulses red. Your beat starts playing, and a light walks along the step buttons.">
+    Press your spare pad once. Recording and playback start together.
+    <Tip>Press and release; don't hold the pad down. Tapping it again is what stops the recording, in the next step.</Tip>
+  </Step>
+  <Step press="drum-pads" see="Recording stops and Sampling Mode closes.">
+    Watch the moving light. Let it walk across the step buttons twice (that's two bars), and just as it lands back on **Step 1**, tap the same pad again.
+    <Tip>Stopping exactly at the end of a bar makes the sample loop smoothly. A little early or late is fine for a first try; you can always record again.</Tip>
+  </Step>
+  <Step press="play" hear="Silence.">
+    If your beat is still playing, press **Play** to stop it.
+  </Step>
+  <Step press="drum-pads" hear="Your whole beat, drums and effects included, from a single pad.">
+    Tap the pad you just recorded on.
+    <Tip>Is it much louder or quieter than the other pads? Hold the pad down and turn the **Volume knob**, as in [Lesson 21](/first-moves/lessons/21-sample-with-mic/).</Tip>
+  </Step>
+  <Step press="encoder-1" hear="The pad plays your beat at a lower or higher pitch.">
+    Touch **Knob 1**: the display should name it Transpose. Turn it to the left a few clicks and tap the pad again. Your beat is now a brand-new sound.
+    <Tip>If Knob 1 shows a different setting, turn **the wheel** until all the icons are highlighted together, then tap your pad and try again.</Tip>
+  </Step>
+</Steps>
+
+## Try it yourself
+
+- Give a sound a big effect first, like lots of reverb or a filter swept down (see [Lesson 17](/first-moves/lessons/17-shape-the-sound/)), then resample it. The effect is now baked into the sample, and you can pitch or trim the result like any other sound.
+- Resample onto a melodic track instead of the drum track. Every pad then plays your recording at a different pitch, so a single chord or a whole beat becomes something you can play like a keyboard.
+- Resample a resample. Put a few notes for your pitched-down pad into the beat with the step buttons, then resample the whole thing onto another spare pad. Pitch that one down too, and see how strange it can get.
+
+## Good to know
+
+- Resampling records everything Move is playing, so any track you don't want in the recording should be silent. Mute it first, as in [Lesson 19](/first-moves/lessons/19-mixing/).
+- **Sampling through USB-C:** besides the mic, Audio in and resampling, there's a fourth source, USB-C. With Move connected by cable to a computer, phone or tablet, you can play a sound there and record it straight onto a pad. It only works with devices that support the USB Audio Class 2.0 standard, so some Android phones can't do it, and iPhones or iPads with a Lightning port need an adapter and a charger plugged in.
+- **Multi-pad recording:** on a drum track, while a recording is running, press a different pad and the recording carries on onto that pad. Each pad you press gets the same recording, but starts playing from the moment you pressed it. It's a quick way to spread one long sound over several pads, much like slicing in [Lesson 22](/first-moves/lessons/22-line-in-and-slicing/).
+
+<Note kind="newer" firmware="2.1">
+  Move 2.1 added another way to turn a clip into a sample: in Session Mode, copy a clip and paste it onto a drum pad. This is called **bouncing**.
+</Note>

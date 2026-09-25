@@ -20,6 +20,12 @@ export const GLOSSARY: GlossaryEntry[] = [
     lesson: '16-arp-and-repeat',
   },
   {
+    term: 'Audio track',
+    slug: 'audio-track',
+    def: 'A track that plays recorded sound (a voice, a guitar, a loop) instead of notes for an instrument. Move has had audio tracks since software 2.0.',
+    lesson: '24-audio-tracks',
+  },
+  {
     term: 'Automation',
     slug: 'automation',
     def: 'Knob movements that Move remembers. Turn a knob while recording and the change plays back every time the clip loops.',
@@ -42,6 +48,12 @@ export const GLOSSARY: GlossaryEntry[] = [
     slug: 'beat',
     def: 'The steady pulse you tap your foot to. On Move each beat is 4 steps long by default, so steps 1, 5, 9 and 13 each start a new beat.',
     lesson: '09-first-beat',
+  },
+  {
+    term: 'Bounce',
+    slug: 'bounce',
+    def: 'Turning a clip into a recording of itself, so what it plays becomes audio you can reuse, chop or free up space with. Added in Move software 2.1.',
+    lesson: '24-audio-tracks',
   },
   {
     term: 'BPM',
@@ -122,10 +134,28 @@ export const GLOSSARY: GlossaryEntry[] = [
     lesson: '14-loops',
   },
   {
+    term: 'Main effects',
+    slug: 'main-effects',
+    def: 'Two effects that work on the sound of the whole Set at once, rather than on a single track. You adjust them from Session Mode.',
+    lesson: '20-main-effects',
+  },
+  {
     term: 'Metronome',
     slug: 'metronome',
     def: 'A click that sounds on every beat, to help you keep time while you play or record.',
     lesson: '10-tempo-metronome-groove',
+  },
+  {
+    term: 'Mixing',
+    slug: 'mixing',
+    def: 'Balancing the tracks so every part can be heard: setting their volumes, and muting or soloing them.',
+    lesson: '19-mixing',
+  },
+  {
+    term: 'Mute',
+    slug: 'mute',
+    def: 'Silencing a track or a single drum pad for a moment without deleting anything. Unmute to bring it back.',
+    lesson: '19-mixing',
   },
   {
     term: 'Note Mode',
@@ -167,6 +197,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Resampling',
     slug: 'resampling',
     def: 'Recording what Move itself is playing as a new sample, so a whole beat or a processed sound becomes something you can play from a single pad.',
+    lesson: '23-resampling',
   },
   {
     term: 'Root',
@@ -178,11 +209,13 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Sample',
     slug: 'sample',
     def: 'A piece of recorded sound (a drum hit, a voice, a noise from your kitchen) that you can play back from a pad.',
+    lesson: '21-sample-with-mic',
   },
   {
     term: 'Sampling',
     slug: 'sampling',
     def: 'Recording sound into Move to use as a sample: from the built-in microphone, the audio input, USB-C, or Move itself.',
+    lesson: '21-sample-with-mic',
   },
   {
     term: 'Scale',
@@ -194,7 +227,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Scene',
     slug: 'scene',
     def: 'A column of pads in Session Mode: one clip slot from each track. Playing a scene starts those clips together, like one section of a song.',
-    lesson: '03-sets-tracks-clips',
+    lesson: '18-session-mode',
   },
   {
     term: 'Sequencing',
@@ -206,7 +239,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Session Mode',
     slug: 'session-mode',
     def: 'The view that shows every clip in your Set on the pads, with one row per track, so you can launch clips and try out combinations.',
-    lesson: '04-three-views',
+    lesson: '18-session-mode',
   },
   {
     term: 'Set',
@@ -230,6 +263,13 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'Slicing',
     slug: 'slicing',
     def: 'Chopping one longer sample into pieces and spreading them across pads, so you can replay the parts in a new order.',
+    lesson: '22-line-in-and-slicing',
+  },
+  {
+    term: 'Solo',
+    slug: 'solo',
+    def: 'Hearing one track on its own while the others go quiet, so you can listen to it closely.',
+    lesson: '19-mixing',
   },
   {
     term: 'Step',
@@ -260,5 +300,11 @@ export const GLOSSARY: GlossaryEntry[] = [
     slug: 'velocity',
     def: 'How hard a note is played. Hit a pad softly for a low velocity (quieter) or hard for a high velocity (louder, often brighter).',
     lesson: '06-playing-pads',
+  },
+  {
+    term: 'Warping',
+    slug: 'warping',
+    def: 'Stretching or squeezing recorded audio so it keeps in time with the Set’s tempo without changing its pitch.',
+    lesson: '24-audio-tracks',
   },
 ];

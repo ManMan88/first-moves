@@ -1,0 +1,95 @@
+---
+title: Line-in sampling & slicing
+part: 5
+order: 22
+summary: Record a drum loop from your phone through the Audio in port, then slice it across the pads and replay the pieces in a new order.
+needs:
+  - A Move that is switched on
+  - A brand-new Set in Note Mode, with the top (drum) track selected
+  - A phone or music player with a headphone output, and a cable with a 3.5 mm plug on each end
+  - A drum loop or short music clip to play from it
+video:
+  id: EJwGnDdFXBI
+  title: Sampling with the audio input
+sources:
+  - Manual 4.1.1 Connecting to External Sound Sources
+  - Manual 7.1 Track Presets
+  - Manual 15.2 Selecting a Sampling Input Source
+  - Manual 15.3 Recording Samples
+  - Manual 15.4 Mic and Line In Sampling
+  - Manual 15.4.1 Adjusting Sampling Input Gain
+  - Manual 15.4.2 Turning Monitoring On or Off
+  - Manual 15.8 Sample Slicing
+  - Manual 15.9 Adjusting Sample Parameters
+  - Manual 15.9.1 Sample Parameters in Drum Sampler
+  - Manual 15.9.2 Sample Parameters in the Melodic Sampler
+  - Release notes 1.5.0
+  - Release notes 1.6.0
+  - Release notes 2.1.0
+---
+
+## The idea
+
+In [Lesson 21](/first-moves/lessons/21-sample-with-mic/) you sampled with the microphone. The mic hears everything in the room, including your voice and the fridge. The **Audio in** port on the back of Move takes sound straight from another device through a cable instead: a phone, a music player, a synth. The result is clean, with no room noise.
+
+This time you'll record something longer: a drum loop or a short phrase of music, a few seconds long. On one pad, that's just one long sound. **[Slicing](/first-moves/glossary/#slicing)** chops it into equal pieces and puts each piece on its own pad. Each pad then plays just its own little part of the loop.
+
+Now the fun part: play the pads in a different order. Kick, kick, snare, the last hi-hat, back to the start. The sounds are the same, but the rhythm is yours. This trick of cutting up a drum loop and rearranging it is behind whole styles of music, from hip-hop to jungle. It works on voices too: slice a sung line and you get short vocal "chops" to play like an instrument.
+
+One thing to know before you start: slicing builds a **new drum kit** from the slices, and it replaces the kit on that track. That's why this lesson uses a fresh Set. If you slice by accident, **Undo** brings the old kit back.
+
+<Steps view="both">
+  <Step press="audio-in" see="Nothing changes on the display yet.">
+    Plug one end of the cable into your phone's headphone output and the other into Move's **Audio in** port, on the back edge.
+    <Tip>Audio in expects a line-level signal, like a phone or synth output. A microphone or an electric guitar is too quiet on its own and needs a preamp in between. On your phone, start with the volume about halfway up.</Tip>
+  </Step>
+  <Step press="sampling" see="The Sampling button pulses red, the drum pads turn pink, and the display asks you to press a pad.">
+    With the drum track still selected, press **Sampling**.
+    <Tip>Touch **the wheel** to check the input source. With a cable in Audio in, you want Line in, shown as a rectangle with an arrow pointing into it. If a different icon shows, press **the wheel** on the source icon to step through the sources until Line in appears. When something is plugged into Audio in, Move turns **monitoring** on by default, so once your phone plays you should hear it through Move. Too quiet or too loud? Set the gain just as in [Lesson 21](/first-moves/lessons/21-sample-with-mic/).</Tip>
+  </Step>
+  <Step press="drum-pads" hold="drum-pads" see="The pad pulses red while it records. When you let go, Sampling Mode closes.">
+    Start the loop playing on your phone. Right at the start of a bar (on a kick drum is a good spot), press and hold one of the pink drum pads. Keep holding for one or two bars, then let go.
+    <Tip>Don't worry about hitting the start perfectly. You can tidy up the start and end during slicing. Aim for a few seconds; a short, busy drum loop slices best.</Tip>
+  </Step>
+  <Step press="drum-pads" hear="Your whole recording, played from one pad.">
+    Stop the music on your phone, then tap the pad you recorded on to hear the full sample.
+  </Step>
+  <Step press="wheel" see="The sample's icon is highlighted on the display.">
+    Turn **the wheel** until the icon for the sample is highlighted. It's the extra icon that sampler sounds have, next to the instrument and the two effects.
+    <Tip>Not sure which icon is the sample? Pick one and do the next step. If the Sample Options menu doesn't open, press **Back** and try the icon next to it.</Tip>
+  </Step>
+  <Step press="shift wheel" hold="shift" see="The Sample Options menu opens.">
+    Hold **Shift** and press **the wheel**.
+  </Step>
+  <Step press="wheel" see="Slicing Mode opens, and Move has already cut the sample into equal slices.">
+    With **Slice** chosen in the menu, press **the wheel**.
+    <Tip>The menu may have more than one entry. If Slice isn't the one selected, turn **the wheel** to it first.</Tip>
+  </Step>
+  <Step press="wheel" see="The number of slices goes up or down as you turn.">
+    Turn **the wheel** to choose how many slices you want. For a one-bar drum loop, 8 or 16 is a good start: roughly one drum hit per slice.
+  </Step>
+  <Step press="wheel" see="Slicing Mode closes. Your slices now sit on the drum pads, one per pad.">
+    Press **the wheel** to confirm.
+    <Tip>If you asked for fewer than 16 slices, the pads left over are simply empty. Didn't like the result? Press **Undo** to get your old kit back, and try again.</Tip>
+  </Step>
+  <Step press="drum-pads" hear="Short pieces of your loop, one on each pad. Mixed up, they make a new rhythm.">
+    Tap around the drum pads and listen to each slice. Find the one that starts the loop, then jump around: repeat a kick slice, skip ahead, end on a cymbal.
+  </Step>
+</Steps>
+
+## Try it yourself
+
+Find two or three slices you like, perhaps a kick, a snare and a hi-hat, and program a brand-new beat with them on the step buttons, as in [Lesson 9](/first-moves/lessons/09-first-beat/). Your beat is made entirely from someone else's loop, but it sounds nothing like the original.
+
+Or record a short spoken or sung phrase instead of a drum loop, slice it into 16, and tap out a rhythm with the syllables.
+
+## Good to know
+
+- While you're in Slicing Mode, **Knob 1** and **Knob 2** move the start and end of the part of the sample that gets sliced. Use them to cut off silence or a stray sound at either end. To move where one slice starts, press its pad and turn **Knob 3**.
+- Monitoring stays on after you leave Sampling Mode, as long as the cable is plugged in. To switch it off, open Sampling Mode, turn **the wheel** to the headphones icon and press **the wheel**.
+- Want a single note to play like an instrument, instead of slices? Sample one held note from a synth onto a melodic track. Every pad then plays it at a different pitch. On a melodic sampler, **Knob 1** transposes the sample and **Knob 2** sets where it starts.
+- The Sample Options menu also has a **Reverse** entry (since Move 1.6), which plays a drum sample backwards.
+
+<Note kind="newer" firmware="2.1">
+  Since Move 2.1 there's an extra input source called **Line in – Mono**. It records only the left channel of the cable, as a one-channel file. Choose it when the device you're sampling only puts out one channel. Pick it the same way you pick any other source: in Sampling Mode, highlight the source icon and press the wheel until it appears.
+</Note>

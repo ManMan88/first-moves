@@ -161,3 +161,85 @@ Legend: 🔴 matters for a step working at all · 🟡 affects wording or tips �
 - [ ] 🟡 Turning the wheel from the whole-preset selection highlights single devices (instrument or an effect), and many melodic presets have a knob whose name mentions the filter.
 - [ ] 🟡 After holding **Delete** and touching an automated knob, the sound stops changing by itself.
 - [ ] ⚪ On sampler sounds, holding Shift while turning some knobs gives finer changes, and Shift + tap on some knobs switches to a second setting.
+
+## Lesson 18: Session Mode (`18-session-mode.mdx`)
+
+- [ ] 🔴 In Session Mode, each pad row lines up with the track button beside it (drum row next to the drum track's button).
+- [ ] 🟡 A new clip goes into the first empty slot, and "first" means leftmost. (The lesson hedges: "the drawing shows one example".)
+- [ ] 🟡 Sliding a finger down a column where some pads are lit and some are dark launches the lit clips.
+- [ ] 🟡 2.0.5: a launch pressed too close to the start of a bar waits for the following bar.
+- [ ] 🟡 Key & Scale and Full Velocity are hidden in Session Mode (2.0.0 beta notes only).
+
+## Lesson 19: Mixing (`19-mixing.mdx`)
+
+- [ ] 🟡 Muting a drum pad still works while the drum track is soloed.
+- [ ] ⚪ Holding Mute may light the lights under the knobs (the automation check). The tip says this conditionally.
+
+## Lesson 20: Main effects & performing (`20-main-effects.mdx`)
+
+- [ ] 🟡 In Session Mode, turning the wheel shows on the display which main effect is selected.
+- [ ] 🟡 A new Set's main effects are still Dynamics and Saturator on 2.x. Also check how to swap them from the browser.
+- [ ] 🟡 Holding Shift and tapping Play several times retriggers on every tap (a stutter).
+- [ ] 🟡 Muting or unmuting a track takes effect at once, not on the next bar.
+
+## Lessons 21–23: Sampling (`21-sample-with-mic.mdx`, `22-line-in-and-slicing.mdx`, `23-resampling.mdx`)
+
+- [ ] 🔴 **Most important sampling check.** On a drum track, turn the wheel to the pad's sample icon, then press **Shift + the wheel**. Does this open **Sample Options** (Slice, Reverse), as in release notes 1.5 and later? Or the parameter banks, as the older manual §7.1 says? Lesson 22 follows the release notes.
+- [ ] 🔴 In Sampling Mode, the source icon is highlighted (or easy to highlight), and pressing the wheel cycles Mic/Line in → Resampling → USB-C.
+- [ ] 🟡 After adjusting Gain, pressing a pad still starts recording (no need to close Gain first).
+- [ ] 🟡 With only headphones in Audio out, a headphones icon appears in the Sampling menu (Monitoring defaults to off), and turning monitoring on lets you hear the mic.
+- [ ] 🟡 2.1: mic recordings are mono, and "Line in – Mono" records the left channel.
+- [ ] 🟡 After recording, with the whole preset selected, touching Knob 2 shows Sample Start and Knob 1 shows Transpose for the new pad.
+- [ ] 🟡 With a device plugged into Audio in, monitoring lets you hear it through Move in Sampling Mode. After a hold-to-record, the recorded pad stays selected.
+- [ ] 🟡 **Resampling:**
+  - after stopping a resample by tapping the pad, playback may keep running;
+  - Transpose (Knob 1) lowers the pitch when turned left;
+  - the metronome click is not recorded.
+- [ ] 🟡 On a drum track, pressing a different pad during recording continues onto that pad (multi-pad recording) instead of stopping.
+- [ ] 🟡 2.1 bounce: copy a clip in Session Mode and paste it onto a drum pad.
+
+## Lesson 24: Audio tracks (`24-audio-tracks.mdx`), all from release notes and the Help Center FAQ
+
+- [ ] 🔴 Making the bottom track an audio track: press **Back** (maybe more than once) to reach the main list of categories. **Audio Track** is at or near the top, and pressing the wheel on it converts the track (Undo restores it). Do the track's note clips survive?
+- [ ] 🔴 **Sampling on an audio track:**
+  - pressing Sampling arms the track;
+  - the wheel shows the input and cycles through Mic, Resampling and USB-C.
+- [ ] 🔴 **Recording on an audio track:**
+  - Record starts the transport and records (possibly after a one-bar count-in);
+  - it stops by itself at 16 bars or the lower Max Length;
+  - pressing Record again stops recording and the take loops in time;
+  - Undo discards the take.
+- [ ] 🟡 In Session Mode the bottom pad row is the bottom track's clip slots.
+- [ ] 🔴 **Bounce (2.1):**
+  - pasting a copied note clip onto an empty audio clip slot bounces it;
+  - the pad flashes, a progress bar shows, and the wheel cancels;
+  - the result sounds the same as the original.
+- [ ] 🟡 After a tempo change, recorded audio follows the new tempo and keeps its pitch (warping).
+- [ ] ⚪ **Loading a loop:**
+  - select an audio clip slot, highlight the sample icon, press the wheel and browse;
+  - Move detects the loop's tempo;
+  - the first knob transposes the clip.
+
+## Lesson 25: Move Manager (`25-move-manager.mdx`)
+
+- [ ] 🟡 After you enter the code in the computer's browser, Move is still in the Setup menu, so holding Back closes it.
+- [ ] 🟡 Typing the bare hostname in Chrome may run a web search, and adding `http://` in front fixes it. Next time, a new code may not be needed.
+- [ ] 🔴 **Loading an uploaded sample:**
+  - on a drum kit, tapping a pad selects it, so the sample icon and the browser act on that pad;
+  - from a sample category, pressing Back once reaches a list containing **User Samples**;
+  - samples load as you scroll, and pressing the wheel keeps one.
+- [ ] 🟡 Sets can be uploaded to Move with the Upload button or by drag and drop on the Sets page.
+- [ ] 🟡 Sample space per Set is 800 MB on 2.x (release notes 1.8), not the manual's 400 MB.
+
+## Lesson 26: Cloud, Link, MIDI & Live (`26-cloud-link-midi-live.mdx`)
+
+- [ ] 🔴 **Shift + a track button** opens a track menu with MIDI In and MIDI Out entries; MIDI In has an Auto option; Back leaves the menu.
+- [ ] 🟡 By default, a USB keyboard plugged into USB-A plays the selected track with no setup, and its notes can be recorded like pad playing.
+- [ ] 🟡 In the Link entry, turning the wheel to Tempo selects it.
+- [ ] 🟡 MIDI over USB-C works in Standalone Mode with a computer, iPad/iPhone or Push 3 as the host.
+- [ ] ⚪ Link Audio streams Move's main output or individual tracks to audio tracks in Live (USB-C recommended).
+
+## Across lessons
+
+- [ ] 🔴 Pressing a track button selects that track, including from the Set Overview. Lessons 3, 9, 21 and 25 rely on this.
+- [ ] 🟡 A scene slide is one quick finger slide down a column. The drawing lights the whole column as a single action.
