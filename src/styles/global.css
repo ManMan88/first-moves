@@ -549,3 +549,427 @@ main {
     scroll-margin: 1rem;
   }
 }
+
+/* Lesson page */
+.crumbs {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.crumbs a {
+  color: var(--muted);
+}
+
+.kicker {
+  margin: 0.8rem 0 0;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.8rem;
+}
+
+.lesson-header .lede {
+  margin-top: 0;
+}
+
+.needs {
+  display: inline-block;
+  margin: 0.3rem 0 0.5rem;
+  padding: 0.6rem 0.9rem;
+  border-left: 4px solid var(--hold);
+  background: var(--hold-soft);
+  border-radius: 0 10px 10px 0;
+}
+
+.needs ul {
+  margin: 0.2rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.lesson-content > :not(.steps),
+.lesson-video,
+.lesson-footer {
+  max-width: 46rem;
+}
+
+.lesson-content > .steps {
+  margin: 1.5rem 0 2rem;
+}
+
+.steps {
+  display: grid;
+  gap: 0.8rem 1.75rem;
+  align-items: start;
+}
+
+.steps-figure {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--bg);
+  padding: 0.5rem 0 0.4rem;
+}
+
+.steps-figure .back-panel {
+  margin-top: 0.35rem;
+}
+
+.step-list {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.step {
+  margin: 0 0 1rem;
+  padding: 0.2rem 0 0.2rem 0.3rem;
+}
+
+.step:focus {
+  outline: none;
+}
+
+.step-text > :first-child {
+  margin-top: 0;
+}
+
+.expect {
+  margin: 0.5rem 0;
+  padding: 0.45rem 0.7rem;
+  border-radius: 10px;
+  background: var(--ok-soft);
+  color: var(--text);
+}
+
+.expect strong {
+  color: var(--ok);
+}
+
+.steps.is-enhanced .step-list {
+  list-style: none;
+  padding: 0;
+}
+
+.steps.is-enhanced .step {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  font-size: 1.1rem;
+}
+
+.step-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+}
+
+.step-nav[hidden] {
+  display: none;
+}
+
+.step-counter {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.steps-done {
+  margin-top: 1rem;
+  border-color: var(--ok);
+  background: var(--ok-soft);
+}
+
+.steps-done p {
+  margin-top: 0;
+}
+
+.steps-done:focus {
+  outline: 3px solid var(--ok);
+}
+
+.tip {
+  margin: 0.6rem 0 0;
+  font-size: 0.95rem;
+}
+
+.tip summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.tip-body {
+  padding: 0.3rem 0 0 1rem;
+  border-left: 3px solid var(--line);
+  margin-top: 0.3rem;
+}
+
+.tip-body > :first-child {
+  margin-top: 0;
+}
+
+.note {
+  margin: 1.2rem 0;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+}
+
+.note-title {
+  margin: 0 0 0.25rem;
+  font-weight: 750;
+}
+
+.note p:last-child {
+  margin-bottom: 0;
+}
+
+.note-newer {
+  border-color: var(--hold);
+  background: var(--hold-soft);
+}
+
+.note-tip {
+  border-color: var(--ok);
+  background: var(--ok-soft);
+}
+
+.screen-mock {
+  margin: 0.6rem 0;
+}
+
+.screen-glass {
+  display: inline-block;
+  min-width: 12rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  background: var(--screen);
+  color: var(--screen-ink);
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  box-shadow: inset 0 0 0 3px #2c2c2c;
+}
+
+.video-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.video-card:hover {
+  border-color: var(--accent);
+}
+
+.video-play {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 1.1rem;
+}
+
+.video-note {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.video iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radius);
+}
+
+.video-link {
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+}
+
+.lesson-footer {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.sources {
+  font-size: 0.88rem;
+}
+
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  font-weight: 650;
+}
+
+.pager-next {
+  margin-left: auto;
+}
+
+/* Concept drawings */
+.concept {
+  margin: 1.2rem 0;
+}
+
+.concept figcaption {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.step-grid-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.step-grid-cells {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+}
+
+.step-cell {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.step-cell.first {
+  border-color: var(--panel-line);
+}
+
+.step-cell.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+}
+
+.step-cell.accent {
+  border-color: var(--hold);
+  border-width: 3px;
+}
+
+.step-grid-label {
+  display: block;
+  margin-top: 0.3rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 650;
+  color: var(--muted);
+}
+
+.step-grid-bar {
+  margin-top: 0.35rem;
+  border-top: 2px solid var(--panel-line);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.pad-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+  max-width: 30rem;
+}
+
+.pad-note {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1.3;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--pad);
+  font-weight: 650;
+  font-size: 0.85rem;
+}
+
+.pad-note.root {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.set-map-box {
+  display: inline-block;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid var(--panel-line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.set-map-title {
+  margin: 0 0 0.4rem;
+  font-weight: 750;
+}
+
+.set-map-track {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.25rem 0;
+}
+
+.set-map-name {
+  width: 4.2rem;
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+
+.set-map-slots {
+  display: flex;
+  gap: 4px;
+}
+
+.set-map-slot {
+  width: 1.4rem;
+  height: 1.1rem;
+  border: 1.5px dashed var(--panel-line);
+  border-radius: 4px;
+}
+
+.set-map-slot.filled {
+  border: 1.5px solid var(--accent);
+  background: var(--accent-soft);
+}
+
+@media (min-width: 960px) {
+  .steps {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  }
+
+  .steps-figure {
+    top: 1rem;
+  }
+}

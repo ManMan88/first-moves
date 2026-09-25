@@ -1,0 +1,28 @@
+---
+const tracks = [1, 2, 3, 4];
+const filled: Record<number, number[]> = { 1: [1, 2], 2: [1], 3: [1, 2, 3], 4: [] };
+---
+
+<figure class="concept set-map">
+  <div
+    class="set-map-box"
+    role="img"
+    aria-label="A Set contains 4 tracks. Each track has 8 slots for clips; some slots hold clips, others are empty."
+  >
+    <p class="set-map-title">Your Set</p>
+    {tracks.map((t) => (
+      <div class="set-map-track">
+        <span class="set-map-name">Track {t}</span>
+        <span class="set-map-slots">
+          {Array.from({ length: 8 }, (_, i) => (
+            <span class:list={['set-map-slot', { filled: filled[t].includes(i + 1) }]}></span>
+          ))}
+        </span>
+      </div>
+    ))}
+  </div>
+  <figcaption>
+    A <strong>Set</strong> is one piece of music. It has 4 <strong>tracks</strong> (one sound each), and every track
+    has room for up to 8 <strong>clips</strong>: short loops of notes.
+  </figcaption>
+</figure>

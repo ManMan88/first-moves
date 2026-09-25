@@ -1,0 +1,39 @@
+---
+import BackPanel from './BackPanel.astro';
+import MoveDiagram from './MoveDiagram.astro';
+
+interface Props {
+  view?: 'top' | 'back' | 'both';
+}
+
+const { view = 'top' } = Astro.props;
+---
+
+<section class="steps" data-steps aria-label="Steps to follow on your Move">
+  <div class="steps-figure">
+    {view !== 'back' && <MoveDiagram />}
+    {view !== 'top' && <BackPanel />}
+    <ul class="diagram-legend" aria-hidden="true">
+      <li>Press</li>
+      <li class="hold">Hold down</li>
+    </ul>
+  </div>
+  <div class="steps-body">
+    <ol class="step-list">
+      <slot />
+    </ol>
+    <nav class="step-nav" data-step-nav hidden aria-label="Step controls">
+      <button type="button" class="button secondary" data-prev>Back</button>
+      <span class="step-counter" data-counter aria-live="polite"></span>
+      <button type="button" class="button" data-next>I did it</button>
+    </nav>
+    <div class="steps-done card" data-done hidden tabindex="-1">
+      <p><strong>Lesson complete!</strong> Try the challenge below, or keep going.</p>
+      <a class="button" data-next-link href="#">Next lesson →</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/stepper.ts';
+</script>

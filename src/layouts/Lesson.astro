@@ -1,0 +1,61 @@
+---
+import Video from '../components/Video.astro';
+import { PARTS } from '../data/parts';
+import type { Lesson } from '../lib/lessons';
+import { url } from '../lib/url';
+import Base from './Base.astro';
+
+interface Props {
+  lesson: Lesson;
+  prev?: Lesson;
+  next?: Lesson;
+}
+
+const { lesson, prev, next } = Astro.props;
+const { title, summary, needs, video, sources, order, part } = lesson.data;
+const partInfo = PARTS.find((p) => p.n === part)!;
+const href = (l: Lesson) => url(`lessons/${l.id}/`);
+---
+
+<Base title={title} description={summary}>
+  <article
+    class="lesson wrap"
+    data-lesson={lesson.id}
+    data-next-href={next ? href(next) : undefined}
+    data-next-title={next?.data.title}
+  >
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href={url('course/')}>Course</a> <span aria-hidden="true">›</span> Part {part}: {partInfo.title}
+    </nav>
+    <header class="lesson-header">
+      <p class="kicker">Lesson {order}</p>
+      <h1>{title}</h1>
+      <p class="lede">{summary}</p>
+      {needs && needs.length > 0 && (
+        <div class="needs">
+          <strong>You’ll need:</strong>
+          <ul>{needs.map((n) => <li>{n}</li>)}</ul>
+        </div>
+      )}
+    </header>
+    <div class="lesson-content">
+      <slot />
+    </div>
+    {video && (
+      <section class="lesson-video">
+        <h2>Watch</h2>
+        <Video id={video.id} title={video.title} />
+      </section>
+    )}
+    <footer class="lesson-footer">
+      <p class="sources muted">
+        Based on: {sources.join(' · ')}. For every detail, see the{' '}
+        <a href="https://www.ableton.com/en/move/manual/">official Move manual</a>.
+      </p>
+      <nav class="pager" aria-label="Lessons">
+        {prev ? <a class="pager-prev" href={href(prev)}>← {prev.data.title}</a> : <span></span>}
+        {next ? <a class="pager-next" href={href(next)}>{next.data.title} →</a> : <a class="pager-next" href={url('course/')}>Course map →</a>}
+      </nav>
+    </footer>
+  </article>
+</Base>

@@ -1,0 +1,29 @@
+---
+import { render } from 'astro:content';
+import Note from '../../components/Note.astro';
+import Screen from '../../components/Screen.astro';
+import Step from '../../components/Step.astro';
+import Steps from '../../components/Steps.astro';
+import Tip from '../../components/Tip.astro';
+import Video from '../../components/Video.astro';
+import PadNotes from '../../components/concepts/PadNotes.astro';
+import SetMap from '../../components/concepts/SetMap.astro';
+import StepGrid from '../../components/concepts/StepGrid.astro';
+import LessonLayout from '../../layouts/Lesson.astro';
+import { getLessons } from '../../lib/lessons';
+
+export async function getStaticPaths() {
+  const lessons = await getLessons();
+  return lessons.map((lesson, i) => ({
+    params: { slug: lesson.id },
+    props: { lesson, prev: lessons[i - 1], next: lessons[i + 1] },
+  }));
+}
+
+const { lesson, prev, next } = Astro.props;
+const { Content } = await render(lesson);
+---
+
+<LessonLayout lesson={lesson} prev={prev} next={next}>
+  <Content components={{ Steps, Step, Tip, Screen, Note, Video, StepGrid, PadNotes, SetMap }} />
+</LessonLayout>

@@ -1,0 +1,26 @@
+---
+import { resolveControls, resolveSequence } from '../data/controls';
+
+interface Props {
+  press?: string;
+  hold?: string;
+  see?: string;
+  hear?: string;
+}
+
+const { press, hold, see, hear } = Astro.props;
+const groups = resolveSequence(press);
+const held = resolveControls(hold);
+---
+
+<li
+  class="step"
+  data-step
+  tabindex="-1"
+  data-press={groups.map((group) => group.join(' ')).join('|')}
+  data-hold={held.join(' ')}
+>
+  <div class="step-text"><slot /></div>
+  {see && <p class="expect"><strong>You should see:</strong> {see}</p>}
+  {hear && <p class="expect"><strong>You should hear:</strong> {hear}</p>}
+</li>

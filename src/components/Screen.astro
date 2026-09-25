@@ -1,0 +1,13 @@
+---
+interface Props {
+  lines: string[];
+}
+
+const { lines } = Astro.props;
+---
+
+<figure class="screen-mock">
+  <div class="screen-glass" role="img" aria-label={`Move’s display showing: ${lines.join(', ')}`}>
+    {lines.map((line) => <div class="screen-row">{line}</div>)}
+  </div>
+</figure>

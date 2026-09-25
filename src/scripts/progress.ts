@@ -53,7 +53,10 @@ export function createProgressStore(storage: Store | null = defaultStorage()): P
       // Storage is blocked or full: progress stays in memory for this page.
     }
   };
-  const get = (id: string): LessonProgress => ({ step: 0, done: false, ...lessons[id] });
+  const get = (id: string): LessonProgress => {
+    const saved: LessonProgress | undefined = lessons[id];
+    return saved ? { ...saved } : { step: 0, done: false };
+  };
   return {
     get,
     setStep(id, step) {

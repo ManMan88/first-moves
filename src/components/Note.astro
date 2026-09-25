@@ -1,0 +1,21 @@
+---
+interface Props {
+  kind?: 'newer' | 'tip' | 'info';
+  firmware?: string;
+  title?: string;
+}
+
+const { kind = 'info', firmware, title } = Astro.props;
+const heading = title ?? (kind === 'newer' ? 'Newer than the manual' : kind === 'tip' ? 'Tip' : 'Good to know');
+---
+
+<aside class={`note note-${kind}`}>
+  <p class="note-title">{heading}</p>
+  {kind === 'newer' && (
+    <p>
+      This works on Move software {firmware ?? '2.0'} and later, which is newer than Ableton’s manual. The details come
+      from Ableton’s release notes, so menu names on your Move may differ slightly.
+    </p>
+  )}
+  <slot />
+</aside>

@@ -1,0 +1,19 @@
+---
+interface Props {
+  rows: string[][];
+  highlight?: string[];
+  caption?: string;
+}
+
+const { rows, highlight = [], caption } = Astro.props;
+const label = `The 32 pads, top row to bottom row: ${rows.map((row) => row.join(' ')).join('; ')}.`;
+---
+
+<figure class="concept pad-notes">
+  <div class="pad-notes-grid" role="img" aria-label={label}>
+    {rows.map((row) =>
+      row.map((note) => <span class:list={['pad-note', { root: highlight.includes(note) }]}>{note}</span>),
+    )}
+  </div>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

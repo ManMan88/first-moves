@@ -1,0 +1,24 @@
+---
+interface Props {
+  id: string;
+  title: string;
+}
+
+const { id, title } = Astro.props;
+---
+
+<div class="video" data-video={id} data-video-title={title}>
+  <button type="button" class="video-card" data-video-play>
+    <span class="video-play" aria-hidden="true">▶</span>
+    <span class="video-text">
+      <strong>Watch Ableton’s video:</strong>
+      {title}
+      <span class="video-note">Loads the YouTube player</span>
+    </span>
+  </button>
+  <p class="video-link"><a href={`https://www.youtube.com/watch?v=${id}`}>Open on YouTube</a></p>
+</div>
+
+<script>
+  import '../scripts/video.ts';
+</script>

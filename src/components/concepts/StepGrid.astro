@@ -1,0 +1,34 @@
+---
+interface Props {
+  on?: number[];
+  accent?: number[];
+  showBeats?: boolean;
+  caption?: string;
+}
+
+const { on = [], accent = [], showBeats = true, caption } = Astro.props;
+const beats = [0, 1, 2, 3];
+const label = `A bar of 16 steps in 4 beats of 4 steps${on.length ? `; lit steps: ${on.join(', ')}` : ''}.`;
+---
+
+<figure class="concept step-grid">
+  <div class="step-grid-row" role="img" aria-label={label}>
+    {beats.map((beat) => (
+      <div class="step-grid-beat">
+        <div class="step-grid-cells">
+          {[1, 2, 3, 4].map((i) => {
+            const n = beat * 4 + i;
+            return (
+              <span class:list={['step-cell', { on: on.includes(n), accent: accent.includes(n), first: i === 1 }]}>
+                {n}
+              </span>
+            );
+          })}
+        </div>
+        {showBeats && <span class="step-grid-label">Beat {beat + 1}</span>}
+      </div>
+    ))}
+  </div>
+  {showBeats && <div class="step-grid-bar" aria-hidden="true"><span>1 bar = 4 beats = 16 steps</span></div>}
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
