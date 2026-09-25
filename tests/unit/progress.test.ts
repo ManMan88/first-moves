@@ -71,4 +71,37 @@ describe('progress store', () => {
     expect(s.all()).toEqual({});
     expect(createProgressStore(m).all()).toEqual({});
   });
+
+  it('does not erase progress saved by another tab', () => {
+    const m = memory();
+    const tabA = createProgressStore(m);
+    const tabB = createProgressStore(m);
+    tabB.markDone('04-three-views');
+    tabA.setStep('03-sets-tracks-clips', 2);
+    const fresh = createProgressStore(m);
+    expect(fresh.get('04-three-views').done).toBe(true);
+    expect(fresh.get('03-sets-tracks-clips').step).toBe(2);
+  });
+
+  it('does not bring back progress that another tab reset', () => {
+    const m = memory();
+    const tabA = createProgressStore(m);
+    const tabB = createProgressStore(m);
+    tabA.markDone('01-tour');
+    tabB.reset();
+    tabA.setStep('02-power-and-setup', 1);
+    const fresh = createProgressStore(m);
+    expect(fresh.get('01-tour').done).toBe(false);
+    expect(fresh.get('02-power-and-setup').step).toBe(1);
+  });
+
+  it('remembers the last lesson you worked on', () => {
+    const m = memory();
+    const s = createProgressStore(m);
+    expect(s.last()).toBeNull();
+    s.setStep('05-new-set', 1);
+    s.markDone('03-sets-tracks-clips');
+    expect(createProgressStore(m).last()).toBe('03-sets-tracks-clips');
+  });
 });
+

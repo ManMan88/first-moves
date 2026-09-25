@@ -6,12 +6,12 @@
   --text: #1d1c1a;
   --muted: #5d5952;
   --line: #dcd8d0;
-  --accent: #d94a2b;
+  --accent: #c23f22;
   --accent-soft: #fbe2da;
   --accent-ink: #ffffff;
   --hold: #2563c9;
   --hold-soft: #dce8fb;
-  --ok: #1d7f45;
+  --ok: #17693a;
   --ok-soft: #dcf2e4;
   --panel: #e8e6e1;
   --panel-line: #8f8a82;
@@ -413,15 +413,17 @@ main {
   stroke: var(--hold);
 }
 
-.badge circle {
+.badge rect {
   fill: var(--accent);
   stroke: var(--surface);
   stroke-width: 3;
+  vector-effect: non-scaling-stroke;
 }
 
 .badge text {
   fill: var(--accent-ink);
-  font: 800 17px var(--font);
+  font-family: var(--font);
+  font-weight: 800;
   text-anchor: middle;
   dominant-baseline: central;
 }
@@ -604,11 +606,14 @@ main {
 }
 
 .steps-figure {
+  background: var(--bg);
+  padding: 0.5rem 0 0.4rem;
+}
+
+.steps.is-enhanced .steps-figure {
   position: sticky;
   top: 0;
   z-index: 2;
-  background: var(--bg);
-  padding: 0.5rem 0 0.4rem;
 }
 
 .steps-figure .back-panel {
@@ -632,7 +637,6 @@ main {
 .steps .step,
 .steps .steps-done {
   scroll-margin-top: calc(var(--figure-h, 0px) + 12px);
-  scroll-margin-bottom: 5.5rem;
 }
 
 .step-text > :first-child {
@@ -970,12 +974,24 @@ main {
   background: var(--accent-soft);
 }
 
-@media (min-width: 960px) {
+/* Stacked layout: keep the sticky drawing from taking over the screen. */
+@media (max-width: 639px), (max-width: 959px) and (min-height: 521px) {
+  .steps.is-enhanced .steps-figure .move-diagram {
+    max-height: 32vh;
+  }
+
+  .steps.is-enhanced .steps-figure .back-panel {
+    max-height: 9vh;
+  }
+}
+
+/* Wide screens and landscape phones: drawing beside the steps. */
+@media (min-width: 960px), (min-width: 640px) and (max-height: 520px) {
   .steps {
     grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
   }
 
-  .steps-figure {
+  .steps.is-enhanced .steps-figure {
     top: 1rem;
   }
 

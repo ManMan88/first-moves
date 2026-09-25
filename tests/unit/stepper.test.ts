@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { clampStep, highlightsFor, parseGroups } from '../../src/scripts/stepper';
+import { badgesFor, clampStep, highlightsFor, parseGroups } from '../../src/scripts/stepper';
 
 describe('parseGroups', () => {
   it('splits groups on | and ids on spaces', () => {
@@ -13,24 +13,43 @@ describe('parseGroups', () => {
 });
 
 describe('highlightsFor', () => {
-  it('numbers groups when there is more than one action', () => {
+  it('lights every control and marks the held ones', () => {
     expect(highlightsFor([['shift'], ['step-2']], ['shift'])).toEqual([
-      { id: 'shift', order: 1, held: true },
-      { id: 'step-2', order: 2, held: false },
+      { id: 'shift', held: true },
+      { id: 'step-2', held: false },
     ]);
   });
-  it('does not number a single action', () => {
-    expect(highlightsFor([['play']], [])).toEqual([{ id: 'play', order: null, held: false }]);
+  it('lights every control of an alias group', () => {
+    expect(highlightsFor([['pad-1-1', 'pad-1-2'], ['play']], []).map((h) => h.id)).toEqual(['pad-1-1', 'pad-1-2', 'play']);
   });
-  it('gives all ids in a group the same number', () => {
-    const h = highlightsFor([['pad-1-1', 'pad-1-2'], ['play']], []);
-    expect(h.map((x) => x.order)).toEqual([1, 1, 2]);
-  });
-  it('adds held-only controls without a number', () => {
+  it('adds held-only controls', () => {
     expect(highlightsFor([['step-1']], ['shift'])).toEqual([
-      { id: 'step-1', order: null, held: false },
-      { id: 'shift', order: null, held: true },
+      { id: 'step-1', held: false },
+      { id: 'shift', held: true },
     ]);
+  });
+});
+
+describe('badgesFor', () => {
+  it('does not number a single action', () => {
+    expect(badgesFor([['play']])).toEqual([]);
+    expect(badgesFor([])).toEqual([]);
+  });
+  it('numbers each action in order', () => {
+    expect(badgesFor([['shift'], ['step-2']])).toEqual([
+      { id: 'shift', label: '1' },
+      { id: 'step-2', label: '2' },
+    ]);
+  });
+  it('puts one badge on the first control of an alias group', () => {
+    const knobs = Array.from({ length: 8 }, (_, i) => `encoder-${i + 1}`);
+    expect(badgesFor([knobs, ['volume']])).toEqual([
+      { id: 'encoder-1', label: '1' },
+      { id: 'volume', label: '2' },
+    ]);
+  });
+  it('shows every number on a control pressed more than once', () => {
+    expect(badgesFor([['plus'], ['plus']])).toEqual([{ id: 'plus', label: '1,2' }]);
   });
 });
 

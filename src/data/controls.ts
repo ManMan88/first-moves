@@ -95,7 +95,7 @@ const single: Control[] = [
   },
   {
     id: 'shift', name: 'Shift', group: 'function',
-    does: 'Hold it to reach the second job of other controls, such as the icons printed under the step buttons. Double-press to lock it on.',
+    does: 'Hold it to reach the second job of other controls. While you hold it, icons appear under several step buttons: each opens a setting.',
   },
   {
     id: 'left', name: 'Left arrow', group: 'navigation',

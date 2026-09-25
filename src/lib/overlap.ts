@@ -11,7 +11,8 @@ export function normalizeWords(text: string): string[] {
 
 /** Maximal runs of at least `n` consecutive words in `candidate` that also appear in `reference`. */
 export function sharedRuns(candidate: string, reference: string, n = 8): string[] {
-  const ref = normalizeWords(reference);
+  // Page-number lines in the extracted manual would otherwise split runs at page breaks.
+  const ref = normalizeWords(reference.replace(/^\s*\d+\s*$/gm, ' '));
   const grams = new Set<string>();
   for (let i = 0; i + n <= ref.length; i++) grams.add(ref.slice(i, i + n).join(' '));
 
@@ -35,15 +36,37 @@ export function sharedRuns(candidate: string, reference: string, n = 8): string[
 }
 
 const READABLE_ATTRS = /\b(?:see|hear|title|caption|summary)="([^"]*)"/g;
+const VISIBLE_KEYS = new Set(['title', 'summary']);
 
-/** Reduces an MDX lesson to its readable text: prose plus the text of attributes learners see. */
+const unquote = (value: string) => value.trim().replace(/^(['"])(.*)\1$/, '$2');
+
+/** The frontmatter text learners see on the page: title, summary and the "needs" list. */
+function visibleFrontmatter(frontmatter: string): string {
+  const out: string[] = [];
+  let inNeeds = false;
+  for (const line of frontmatter.split('\n')) {
+    const key = line.match(/^(\w+):\s*(.*)$/);
+    if (key) {
+      inNeeds = key[1] === 'needs';
+      if (VISIBLE_KEYS.has(key[1]) && key[2]) out.push(`${unquote(key[2])}.`);
+      continue;
+    }
+    const item = line.match(/^\s+-\s+(.*)$/);
+    if (inNeeds && item) out.push(`${unquote(item[1])}.`);
+  }
+  return out.join(' ');
+}
+
+/** Reduces an MDX lesson to its readable text: visible frontmatter, prose, and attributes learners see. */
 export function stripMdx(source: string): string {
-  return source
-    .replace(/^---\n[\s\S]*?\n---\n/, '')
+  const frontmatter = source.match(/^---\n([\s\S]*?)\n---\n/);
+  const body = frontmatter ? source.slice(frontmatter[0].length) : source;
+  const text = body
     .replace(/^(import|export)\s.*$/gm, '')
     .replace(/<[^>]+>/g, (tag) => {
       const texts = [...tag.matchAll(READABLE_ATTRS)].map((m) => `${m[1]}.`);
       return ` ${texts.join(' ')} `;
     })
     .replace(/[*_`#>]/g, '');
+  return `${frontmatter ? visibleFrontmatter(frontmatter[1]) : ''}\n${text}`;
 }

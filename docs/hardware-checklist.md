@@ -24,6 +24,7 @@ Legend: 🔴 matters for a step working at all · 🟡 affects wording or tips �
 - [ ] 🟡 **Solo = hold Shift + Mute, then press a track button.** This comes from release notes 1.3, not the manual.
 - [ ] 🟡 **Shift + a track button opens that track's settings** (colour, MIDI). This comes from release notes 1.4/1.5.
 - [ ] 🟡 **Holding Shift makes the icons under the step buttons visible**, clearly enough to read. The manual says they "appear" and that the Setup icon flashes under Step 2.
+- [ ] ⚪ **Does double-pressing Shift lock it on?** The hardware diagram in the manual says so, but the text doesn't. The site no longer mentions it; if it's true, add it to the Shift entry in `src/data/controls.ts`.
 
 ## Lesson 1: Tour of the hardware (`01-tour.mdx`)
 

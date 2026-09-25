@@ -32,4 +32,21 @@ describe('overlap', () => {
     expect(out).not.toContain('title: X');
     expect(out).not.toContain('press=');
   });
+
+  it('checks the title, summary and needs learners see in the frontmatter', () => {
+    const src = '---\ntitle: Quiet Pads\nsummary: Learn to hold the button down firmly.\nneeds:\n  - A charged Move\nsources:\n  - Manual 1\n---\nBody.';
+    const out = stripMdx(src);
+    expect(out).toContain('Quiet Pads');
+    expect(out).toContain('Learn to hold the button down firmly.');
+    expect(out).toContain('A charged Move');
+    expect(out).not.toContain('Manual 1');
+  });
+
+  it('matches runs across a page break in the manual', () => {
+    const ref = 'you can press the pads harder to generate\n\n                                   62\nhigher velocity values on the device';
+    expect(sharedRuns('press the pads harder to generate higher velocity values on', ref, 8)).toEqual([
+      'press the pads harder to generate higher velocity values on',
+    ]);
+  });
 });
+

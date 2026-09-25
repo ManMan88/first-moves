@@ -180,7 +180,7 @@ export const GLOSSARY: GlossaryEntry[] = [
   {
     term: 'Shift',
     slug: 'shift',
-    def: 'The button marked with three dots (•••) that unlocks second jobs. Hold it and press another control, such as a step button, to open the setting printed under it.',
+    def: 'The button marked with three dots (•••) that unlocks second jobs. Hold it and press another control, such as a step button, to open the setting shown under it.',
     lesson: '01-tour',
   },
   {
