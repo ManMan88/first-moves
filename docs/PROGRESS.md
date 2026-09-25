@@ -70,9 +70,13 @@ Work happens on branch `stage-1`; it is fast-forwarded to `main` before publishi
 ### Stage 2: lessons 9–17 ✅
 - Written (4 writers → 4 fact-checkers), then reviewed and committed (`7858b0a`); live.
 - Workflow script: `docs/superpowers/workflows/write-lessons-9-17.js`.
-### Stage 3: lessons 18–26, glossary links, final review 🔄
-- Workflow: `docs/superpowers/workflows/write-lessons-18-26.js`, with groups (18, 19, 20), (21, 22, 23), (24), (25, 26), a writer and then a fact-checker each, at medium effort.
-- After it finishes:
+### Stage 3: lessons 18–26 ✅
+- Written (4 writers → 4 fact-checkers) and committed (`734b27d`); all 26 lessons live.
+- Workflow script: `docs/superpowers/workflows/write-lessons-18-26.js`.
+- Added `row-N`/`column-N` aliases so a scene slide lights as one action.
+
+### Final course-continuity review 🔄
+- One reviewer-editor reads all 26 lessons in order and fixes cross-lesson state, terminology and link issues (workflow `course-continuity-review`).
   - merge the hardware checks into the checklist;
   - add glossary links;
   - run a final course-continuity review of all 26 lessons.
