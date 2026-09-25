@@ -98,6 +98,20 @@ function initStepper(section: HTMLElement) {
   section.classList.add('is-enhanced');
   nav.hidden = false;
 
+  // Steps scroll below the sticky drawing instead of under it.
+  const figure = section.querySelector<HTMLElement>('.steps-figure');
+  const syncFigureHeight = () => {
+    if (figure) section.style.setProperty('--figure-h', `${figure.offsetHeight}px`);
+  };
+  syncFigureHeight();
+  window.addEventListener('resize', syncFigureHeight);
+
+  const reveal = (el: HTMLElement) => {
+    syncFigureHeight();
+    el.focus({ preventScroll: true });
+    el.scrollIntoView({ block: 'nearest' });
+  };
+
   const render = (focus: boolean) => {
     steps.forEach((step, i) => {
       step.hidden = i !== current;
@@ -110,7 +124,7 @@ function initStepper(section: HTMLElement) {
     counter.textContent = `Step ${current + 1} of ${steps.length}`;
     prev.disabled = current === 0;
     next.textContent = current === steps.length - 1 ? 'I did it: finish' : 'I did it';
-    if (focus) step.focus();
+    if (focus) reveal(step);
   };
 
   prev.addEventListener('click', () => {
@@ -124,7 +138,7 @@ function initStepper(section: HTMLElement) {
     if (current === steps.length - 1) {
       store.markDone(lessonId);
       done.hidden = false;
-      done.focus();
+      reveal(done);
       return;
     }
     current += 1;

@@ -159,3 +159,20 @@ test('a lesson video loads only when clicked', async ({ page, request }) => {
   await page.locator('[data-video-play]').first().click();
   await expect(page.locator('.video iframe').first()).toHaveAttribute('src', /youtube-nocookie\.com\/embed\//);
 });
+
+test.describe('on a phone', () => {
+  test.use({ viewport: { width: 390, height: 844 } });
+
+  test('the next step is not hidden under the sticky drawing', async ({ page }) => {
+    await page.goto('lessons/02-power-and-setup/');
+    const figure = page.locator('.steps-figure');
+    for (let i = 0; i < 3; i++) {
+      await page.locator('[data-next]').click();
+      const step = page.locator('[data-step]:visible');
+      await expect(step).toBeFocused();
+      const figureBox = (await figure.boundingBox())!;
+      const stepBox = (await step.boundingBox())!;
+      expect(stepBox.y).toBeGreaterThanOrEqual(figureBox.y + figureBox.height - 1);
+    }
+  });
+});

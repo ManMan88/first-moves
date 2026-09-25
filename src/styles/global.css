@@ -629,6 +629,12 @@ main {
   outline: none;
 }
 
+.steps .step,
+.steps .steps-done {
+  scroll-margin-top: calc(var(--figure-h, 0px) + 12px);
+  scroll-margin-bottom: 5.5rem;
+}
+
 .step-text > :first-child {
   margin-top: 0;
 }
@@ -971,6 +977,11 @@ main {
 
   .steps-figure {
     top: 1rem;
+  }
+
+  .steps .step,
+  .steps .steps-done {
+    scroll-margin-top: 1rem;
   }
 }
 
